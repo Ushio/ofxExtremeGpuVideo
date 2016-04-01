@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9F180611CAE7F54005B34B0 /* lz4.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F180581CAE7F54005B34B0 /* lz4.c */; };
+		D9F180621CAE7F54005B34B0 /* lz4frame.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F1805B1CAE7F54005B34B0 /* lz4frame.c */; };
+		D9F180631CAE7F54005B34B0 /* lz4hc.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F1805D1CAE7F54005B34B0 /* lz4hc.c */; };
+		D9F180641CAE7F54005B34B0 /* xxhash.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F1805F1CAE7F54005B34B0 /* xxhash.c */; };
+		D9F180671CAE7F63005B34B0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = D9F180651CAE7F63005B34B0 /* main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D9F1804F1CAE7F1A005B34B0 /* lz4_native_osx.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lz4_native_osx.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F180521CAE7F1A005B34B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F180581CAE7F54005B34B0 /* lz4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lz4.c; path = ../../lib/lz4/lib/lz4.c; sourceTree = "<group>"; };
+		D9F180591CAE7F54005B34B0 /* lz4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lz4.h; path = ../../lib/lz4/lib/lz4.h; sourceTree = "<group>"; };
+		D9F1805A1CAE7F54005B34B0 /* lz4frame_static.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lz4frame_static.h; path = ../../lib/lz4/lib/lz4frame_static.h; sourceTree = "<group>"; };
+		D9F1805B1CAE7F54005B34B0 /* lz4frame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lz4frame.c; path = ../../lib/lz4/lib/lz4frame.c; sourceTree = "<group>"; };
+		D9F1805C1CAE7F54005B34B0 /* lz4frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lz4frame.h; path = ../../lib/lz4/lib/lz4frame.h; sourceTree = "<group>"; };
+		D9F1805D1CAE7F54005B34B0 /* lz4hc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lz4hc.c; path = ../../lib/lz4/lib/lz4hc.c; sourceTree = "<group>"; };
+		D9F1805E1CAE7F54005B34B0 /* lz4hc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lz4hc.h; path = ../../lib/lz4/lib/lz4hc.h; sourceTree = "<group>"; };
+		D9F1805F1CAE7F54005B34B0 /* xxhash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xxhash.c; path = ../../lib/lz4/lib/xxhash.c; sourceTree = "<group>"; };
+		D9F180601CAE7F54005B34B0 /* xxhash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xxhash.h; path = ../../lib/lz4/lib/xxhash.h; sourceTree = "<group>"; };
+		D9F180651CAE7F63005B34B0 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		D9F180661CAE7F63005B34B0 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9F1804C1CAE7F1A005B34B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9F180461CAE7F1A005B34B0 = {
+			isa = PBXGroup;
+			children = (
+				D9F180511CAE7F1A005B34B0 /* lz4_native_osx */,
+				D9F180501CAE7F1A005B34B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9F180501CAE7F1A005B34B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9F1804F1CAE7F1A005B34B0 /* lz4_native_osx.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9F180511CAE7F1A005B34B0 /* lz4_native_osx */ = {
+			isa = PBXGroup;
+			children = (
+				D9F180581CAE7F54005B34B0 /* lz4.c */,
+				D9F180591CAE7F54005B34B0 /* lz4.h */,
+				D9F1805A1CAE7F54005B34B0 /* lz4frame_static.h */,
+				D9F1805B1CAE7F54005B34B0 /* lz4frame.c */,
+				D9F1805C1CAE7F54005B34B0 /* lz4frame.h */,
+				D9F1805D1CAE7F54005B34B0 /* lz4hc.c */,
+				D9F1805E1CAE7F54005B34B0 /* lz4hc.h */,
+				D9F1805F1CAE7F54005B34B0 /* xxhash.c */,
+				D9F180601CAE7F54005B34B0 /* xxhash.h */,
+				D9F180521CAE7F1A005B34B0 /* Info.plist */,
+				D9F180651CAE7F63005B34B0 /* main.c */,
+				D9F180661CAE7F63005B34B0 /* main.h */,
+			);
+			path = lz4_native_osx;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9F1804E1CAE7F1A005B34B0 /* lz4_native_osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9F180551CAE7F1A005B34B0 /* Build configuration list for PBXNativeTarget "lz4_native_osx" */;
+			buildPhases = (
+				D9F1804B1CAE7F1A005B34B0 /* Sources */,
+				D9F1804C1CAE7F1A005B34B0 /* Frameworks */,
+				D9F1804D1CAE7F1A005B34B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lz4_native_osx;
+			productName = lz4_native_osx;
+			productReference = D9F1804F1CAE7F1A005B34B0 /* lz4_native_osx.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9F180471CAE7F1A005B34B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = wow;
+				TargetAttributes = {
+					D9F1804E1CAE7F1A005B34B0 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D9F1804A1CAE7F1A005B34B0 /* Build configuration list for PBXProject "lz4_native_osx" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D9F180461CAE7F1A005B34B0;
+			productRefGroup = D9F180501CAE7F1A005B34B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9F1804E1CAE7F1A005B34B0 /* lz4_native_osx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9F1804D1CAE7F1A005B34B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9F1804B1CAE7F1A005B34B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F180671CAE7F63005B34B0 /* main.c in Sources */,
+				D9F180631CAE7F54005B34B0 /* lz4hc.c in Sources */,
+				D9F180641CAE7F54005B34B0 /* xxhash.c in Sources */,
+				D9F180621CAE7F54005B34B0 /* lz4frame.c in Sources */,
+				D9F180611CAE7F54005B34B0 /* lz4.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D9F180531CAE7F1A005B34B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D9F180541CAE7F1A005B34B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D9F180561CAE7F1A005B34B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lz4_native_osx/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "wow.lz4-native-osx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D9F180571CAE7F1A005B34B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lz4_native_osx/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = "wow.lz4-native-osx";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9F1804A1CAE7F1A005B34B0 /* Build configuration list for PBXProject "lz4_native_osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F180531CAE7F1A005B34B0 /* Debug */,
+				D9F180541CAE7F1A005B34B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9F180551CAE7F1A005B34B0 /* Build configuration list for PBXNativeTarget "lz4_native_osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9F180561CAE7F1A005B34B0 /* Debug */,
+				D9F180571CAE7F1A005B34B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D9F180471CAE7F1A005B34B0 /* Project object */;
+}
