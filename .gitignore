@@ -89,7 +89,6 @@ Thumbs.db
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
 x86/
 bld/
 [Oo]bj/
@@ -121,7 +120,6 @@ artifacts/
 *_p.c
 *_i.h
 *.ilk
-*.meta
 *.obj
 *.pch
 *.pdb
