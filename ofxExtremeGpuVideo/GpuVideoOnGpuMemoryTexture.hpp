@@ -11,7 +11,12 @@
 #include <memory>
 #include <array>
 #include <vector>
+#ifdef _MSC_VER
+#include <gl/glew.h>
+#else
 #include <OpenGL/gl.h>
+#endif
+
 
 #include "GpuVideoTexture.hpp"
 #include "GpuVideoReader.hpp"

@@ -8,7 +8,11 @@
 
 #include <memory>
 #include <array>
+#ifdef _MSC_VER
+#include <gl/glew.h>
+#else
 #include <OpenGL/gl.h>
+#endif
 
 #include "GpuVideoTexture.hpp"
 #include "GpuVideoReader.hpp"

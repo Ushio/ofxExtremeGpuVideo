@@ -14,6 +14,8 @@
 
 #include "ofxExtrimeGpuVideo.hpp"
 
+#define ENABLE_BENCHMARK 1
+
 class ofApp : public ofBaseApp{
 public:
     void setup();
@@ -39,8 +41,10 @@ public:
     
     ofxExtrimeGpuVideo _gpuVideo;
     
+#if ENABLE_BENCHMARK
     // bench
-    std::array<ofxExtrimeGpuVideo, 30> _videos;
+    std::array<ofxExtrimeGpuVideo, 5> _videos;
+#endif
     
     bool _isConverting = false;
     std::vector<std::string> _imagePaths;

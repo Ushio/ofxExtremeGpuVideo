@@ -7,7 +7,11 @@
 //
 
 #pragma once
+#ifdef _MSC_VER
+#include <gl/glew.h>
+#else
 #include <OpenGL/gl.h>
+#endif
 
 class IGpuVideoTexture {
 public:

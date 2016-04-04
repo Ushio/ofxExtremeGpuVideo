@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ofxExtremeGpuVideo">
+      <UniqueIdentifier>{69c517f0-d843-4c15-b7dd-341238b56edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\squish">
+      <UniqueIdentifier>{9fc252b6-57f5-4d15-bbce-071490e31833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lz4">
+      <UniqueIdentifier>{39ffafd9-6a2a-41d3-8e28-eceb1347ae08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ofxImGui">
+      <UniqueIdentifier>{cbe92338-071e-44c0-82b9-18b2dadfa22b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ofxExtremeGpuVideo_App\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ofxExtremeGpuVideo_App\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoOnGpuMemoryTexture.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoReader.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoReaderDecompressed.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoStreamingTexture.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ofxExtremeGpuVideo\ofxExtrimeGpuVideo.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\clusterfit.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\colourblock.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\colourfit.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\colourset.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\maths.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\rangefit.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\singlecolourfit.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\squish.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\squish-1.11_lib\alpha.cpp">
+      <Filter>src\squish</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\lz4.c">
+      <Filter>src\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\lz4frame.c">
+      <Filter>src\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\lz4hc.c">
+      <Filter>src\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\xxhash.c">
+      <Filter>src\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\example-demo\src\main.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\example-demo\src\ofApp.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui_demo.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui_draw.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\BaseEngine.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\BaseTheme.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\EngineGLFW.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\EngineOpenGLES.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\ofxImGui.cpp">
+      <Filter>src\ofxImGui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ofxExtremeGpuVideo_App\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideo.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoOnGpuMemoryTexture.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoReader.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoReaderDecompressed.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoStreamingTexture.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoTexture.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ofxExtremeGpuVideo\ofxExtrimeGpuVideo.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\clusterfit.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\colourblock.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\colourfit.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\colourset.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\config.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\maths.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\rangefit.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\simd.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\simd_float.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\simd_sse.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\simd_ve.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\singlecolourfit.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\squish.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\squish-1.11_lib\alpha.h">
+      <Filter>src\squish</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4.h">
+      <Filter>src\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4frame.h">
+      <Filter>src\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4frame_static.h">
+      <Filter>src\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4hc.h">
+      <Filter>src\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\xxhash.h">
+      <Filter>src\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\example-demo\src\ofApp.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\example-ios\src\InputTextButton.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\example-ios\src\ofApp.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\imgui.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\imgui_internal.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_rect_pack.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_textedit.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_truetype.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\BaseEngine.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\BaseTheme.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\EngineGLFW.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\EngineOpenGLES.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\imconfig.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\ofxImGui.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\ThemeTest.h">
+      <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\libs\squish-1.11_lib\singlecolourlookup.inl">
+      <Filter>src\squish</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,5 +1,15 @@
 #include "ofApp.h"
 
+#ifdef _MSC_VER
+#ifdef _DEBUG
+#define TBB_LIB_EXT "_debug.lib"
+#else
+#define TBB_LIB_EXT ".lib"
+#endif
+#pragma comment(lib, "tbb" TBB_LIB_EXT)
+#pragma comment(lib, "tbbmalloc" TBB_LIB_EXT)
+#endif
+
 #include <regex>
 #include <tbb/tbb.h>
 #include "squish.h"
@@ -15,10 +25,12 @@ static const int kGpuVideoFmts[] = {GPU_COMPRESS_DXT1, GPU_COMPRESS_DXT3, GPU_CO
 void ofApp::setup(){
     _imgui.setup();
     _gpuVideo.load("footage.gv", ofxExtrimeGpuVideo::GPU_VIDEO_STREAMING_FROM_CPU_MEMORY_DECOMPRESSED);
-    
+
+#if ENABLE_BENCHMARK
     for(int i = 0 ; i < _videos.size() ; ++i) {
         _videos[i].load("footage.gv", ofxExtrimeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
     }
+#endif
 }
 
 //--------------------------------------------------------------
@@ -26,12 +38,14 @@ void ofApp::update(){
     _gpuVideo.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
     _gpuVideo.update();
     
+#if ENABLE_BENCHMARK
     float e = ofGetElapsedTimef();
     for(int i = 0 ; i < _videos.size() ; ++i) {
         float t = e + i * 3.0f;
         _videos[i].setTime(fmodf(t, _videos[i].getDuration()));
         _videos[i].update();
     }
+#endif
 }
 
 //--------------------------------------------------------------
@@ -42,6 +56,7 @@ void ofApp::draw(){
     _gpuVideo.getPlaceHolderTexture().draw(0, 0);
     _gpuVideo.end();
 
+#if ENABLE_BENCHMARK
     float x = 0.0f;
     float y = 0.0f;
     float scale = 0.1f;
@@ -59,7 +74,8 @@ void ofApp::draw(){
             y += h;
         }
     }
-    
+#endif
+
     if(_isConverting) {
         ofSetColor(255);
         if(_index < _imagePaths.size()) {

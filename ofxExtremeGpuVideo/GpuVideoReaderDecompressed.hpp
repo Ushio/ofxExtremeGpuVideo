@@ -10,6 +10,7 @@
 
 #include "GpuVideoReader.hpp"
 
+#include <memory>
 class GpuVideoReaderDecompressed : public IGpuVideoReader {
 public:
     GpuVideoReaderDecompressed(std::shared_ptr<IGpuVideoReader> reader);

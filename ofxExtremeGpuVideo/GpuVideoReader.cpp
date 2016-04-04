@@ -8,7 +8,9 @@
 
 #include "GpuVideoReader.hpp"
 #include <cassert>
+#include <algorithm>
 #include "lz4.h"
+
 
 GpuVideoReader::GpuVideoReader(const char *path, bool onMemory) {
     _onMemory = onMemory;
