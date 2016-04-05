@@ -176,12 +176,12 @@ void ofApp::startCompression() {
         return;
     }
     
-    ofFileDialogResult r = ofSystemLoadDialog("入力", true);
+    ofFileDialogResult r = ofSystemLoadDialog("select intermediate dir(.gvintermediate)", true);
     if(r.bSuccess == false) {
         return;
     }
     auto dstDefault = ofFile(r.getPath()).getBaseName() + ".gv";
-    ofFileDialogResult sr = ofSystemSaveDialog(dstDefault.c_str(), "保存先");
+    ofFileDialogResult sr = ofSystemSaveDialog(dstDefault.c_str(), "save to...");
     if(sr.bSuccess == false) {
         return;
     }

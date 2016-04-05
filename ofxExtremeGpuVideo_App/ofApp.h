@@ -14,7 +14,7 @@
 
 #include "ofxExtrimeGpuVideo.hpp"
 
-#define ENABLE_BENCHMARK 1
+#define ENABLE_BENCHMARK 0
 
 class ofApp : public ofBaseApp{
 public:

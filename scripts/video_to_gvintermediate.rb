@@ -1,7 +1,7 @@
 require 'shellwords'
 require 'fileutils'
 
-name = File.basename(ARGV[0], ".*")
+name = File.basename(ARGV[0], ".*") + ".gvintermediate"
 FileUtils.mkdir(name) unless FileTest.exist?(name)
 # -r 30 必要ない？
 
