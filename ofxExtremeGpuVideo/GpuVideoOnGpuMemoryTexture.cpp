@@ -44,7 +44,10 @@ GpuVideoOnGpuMemoryTexture::~GpuVideoOnGpuMemoryTexture() {
     glDeleteBuffers(_textures.size(), _textures.data());
 }
 
-void GpuVideoOnGpuMemoryTexture::setFrame(int frame) {
+void GpuVideoOnGpuMemoryTexture::updateCPU(int frame) {
     assert(0 <= frame && frame < _textures.size());
     _frame = frame;
+}
+void GpuVideoOnGpuMemoryTexture::uploadGPU() {
+    // NOP
 }

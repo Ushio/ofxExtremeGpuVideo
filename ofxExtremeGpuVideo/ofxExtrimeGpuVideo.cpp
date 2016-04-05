@@ -80,22 +80,21 @@ void ofxExtrimeGpuVideo::load(const std::string &name, Mode mode, GLenum interpo
         _shader.linkProgram();
     }
     
-	bool usePBO = false ;
-    static std::shared_ptr<IGpuVideoReader> reader;
+    std::shared_ptr<IGpuVideoReader> reader;
     switch(mode) {
         case GPU_VIDEO_STREAMING_FROM_STORAGE: {
             reader = std::make_shared<GpuVideoReader>(ofToDataPath(name).c_str(), false);
-            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap, usePBO);
+            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap);
             break;
         }
         case GPU_VIDEO_STREAMING_FROM_CPU_MEMORY: {
             reader = std::make_shared<GpuVideoReader>(ofToDataPath(name).c_str(), true);
-            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap, usePBO);
+            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap);
             break;
         }
         case GPU_VIDEO_STREAMING_FROM_CPU_MEMORY_DECOMPRESSED: {
             reader = std::make_shared<GpuVideoReaderDecompressed>(std::make_shared<GpuVideoReader>(ofToDataPath(name).c_str(), false));
-            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap, usePBO);
+            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap);
             break;
         }
         case GPU_VIDEO_ON_GPU_MEMORY:

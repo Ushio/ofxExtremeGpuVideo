@@ -43,7 +43,15 @@ void ofApp::update(){
     for(int i = 0 ; i < _videos.size() ; ++i) {
         float t = e + i * 3.0f;
         _videos[i].setTime(fmodf(t, _videos[i].getDuration()));
-        _videos[i].update();
+    }
+    
+    tbb::parallel_for(tbb::blocked_range<int>( 0, _videos.size(), 1 ), [=](const tbb::blocked_range< int >& range) {
+        for (int i = range.begin(); i != range.end(); i++) {
+            _videos[i].updateCPU();
+        }
+    });
+    for(int i = 0 ; i < _videos.size() ; ++i) {
+        _videos[i].uploadGPU();
     }
 #endif
 }

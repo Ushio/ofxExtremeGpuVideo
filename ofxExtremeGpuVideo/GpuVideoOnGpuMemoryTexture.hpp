@@ -32,7 +32,8 @@ public:
     GpuVideoOnGpuMemoryTexture(const GpuVideoOnGpuMemoryTexture&) = delete;
     void operator=(const GpuVideoOnGpuMemoryTexture&) = delete;
     
-    void setFrame(int frame);
+    void updateCPU(int frame);
+    void uploadGPU();
     GLuint getTexture() const { return _textures[_frame]; }
 private:
     int _frame = 0;

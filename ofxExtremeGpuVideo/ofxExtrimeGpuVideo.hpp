@@ -51,12 +51,21 @@ public:
         _frameAt = frameAt;
     }
     
-    // update texture
+    // update (simple use)
     void update() {
         if(_isLoaded == false) {
             return;
         }
-        _videoTexture->setFrame(_frameAt);
+        _videoTexture->updateCPU(_frameAt);
+        _videoTexture->uploadGPU();
+    }
+    
+    // separate update (advanced use)
+    void updateCPU() {
+        _videoTexture->updateCPU(_frameAt);
+    }
+    void uploadGPU() {
+        _videoTexture->uploadGPU();
     }
     
     // warning! this texture is Placeholder. It's fake texture

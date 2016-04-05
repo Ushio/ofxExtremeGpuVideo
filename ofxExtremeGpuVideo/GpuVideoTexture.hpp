@@ -17,6 +17,7 @@ class IGpuVideoTexture {
 public:
     virtual ~IGpuVideoTexture() {}
     
-    virtual void setFrame(int frame) = 0;
+    virtual void updateCPU(int frame) = 0;
+    virtual void uploadGPU() = 0;
     virtual GLuint getTexture() const = 0;
 };

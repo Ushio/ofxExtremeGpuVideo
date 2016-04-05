@@ -308,8 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				D9E29FC51CB27C0800F52EB1 /* GpuVideo.hpp */,
-				D9E29FC61CB27C0800F52EB1 /* GpuVideoOnGpuMemoryTexture.cpp */,
-				D9E29FC71CB27C0800F52EB1 /* GpuVideoOnGpuMemoryTexture.hpp */,
 				D9E29FC81CB27C0800F52EB1 /* GpuVideoReader.cpp */,
 				D9E29FC91CB27C0800F52EB1 /* GpuVideoReader.hpp */,
 				D9E29FCA1CB27C0800F52EB1 /* GpuVideoReaderDecompressed.cpp */,
@@ -317,6 +315,8 @@
 				D9E29FCC1CB27C0800F52EB1 /* GpuVideoStreamingTexture.cpp */,
 				D9E29FCD1CB27C0800F52EB1 /* GpuVideoStreamingTexture.hpp */,
 				D9E29FCE1CB27C0800F52EB1 /* GpuVideoTexture.hpp */,
+				D9E29FC61CB27C0800F52EB1 /* GpuVideoOnGpuMemoryTexture.cpp */,
+				D9E29FC71CB27C0800F52EB1 /* GpuVideoOnGpuMemoryTexture.hpp */,
 				D9E29FCF1CB27C0800F52EB1 /* ofxExtrimeGpuVideo.cpp */,
 				D9E29FD01CB27C0800F52EB1 /* ofxExtrimeGpuVideo.hpp */,
 			);

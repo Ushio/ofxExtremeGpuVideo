@@ -22,22 +22,21 @@
  */
 class GpuVideoStreamingTexture : public IGpuVideoTexture {
 public:
-    GpuVideoStreamingTexture(std::shared_ptr<IGpuVideoReader> reader, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE, bool usePBO = false);
+    GpuVideoStreamingTexture(std::shared_ptr<IGpuVideoReader> reader, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE);
     ~GpuVideoStreamingTexture();
     
     GpuVideoStreamingTexture(const GpuVideoStreamingTexture&) = delete;
     void operator=(const GpuVideoStreamingTexture&) = delete;
     
-    void setFrame(int frame);
+    void updateCPU(int frame);
+    void uploadGPU();
     GLuint getTexture() const { return _texture; }
 private:
     std::shared_ptr<IGpuVideoReader> _reader;
     GLuint _texture = 0;
-    std::array<GLuint, 3> _pbos;
     GLuint _glFmt = 0;
-    int _pboIndex = 0;
     int _curFrame = -1;
 
-	bool _usePBO = false;
-	std::vector<uint8_t> _buffer;
+    bool _textureNeedsUpload = true;
+	std::vector<uint8_t> _textureMemory;
 };
