@@ -43,7 +43,7 @@ public:
     
 #if ENABLE_BENCHMARK
     // bench
-    std::array<ofxExtrimeGpuVideo, 5> _videos;
+    std::array<ofxExtrimeGpuVideo, 30> _videos;
 #endif
     
     bool _isConverting = false;

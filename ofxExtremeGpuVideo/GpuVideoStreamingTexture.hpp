@@ -22,7 +22,7 @@
  */
 class GpuVideoStreamingTexture : public IGpuVideoTexture {
 public:
-    GpuVideoStreamingTexture(std::shared_ptr<IGpuVideoReader> reader, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE);
+    GpuVideoStreamingTexture(std::shared_ptr<IGpuVideoReader> reader, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE, bool usePBO = false);
     ~GpuVideoStreamingTexture();
     
     GpuVideoStreamingTexture(const GpuVideoStreamingTexture&) = delete;
@@ -37,4 +37,7 @@ private:
     GLuint _glFmt = 0;
     int _pboIndex = 0;
     int _curFrame = -1;
+
+	bool _usePBO = false;
+	std::vector<uint8_t> _buffer;
 };
