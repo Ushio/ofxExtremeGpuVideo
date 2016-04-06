@@ -29,8 +29,8 @@ $ ruby video_to_gvintermediate.rb footage.mov
 ```
 
 ### 2. open openframeworks project file
-- converter-osx/GpuVideo.xcodeproj  (osx)
-- converter-win/ofxExtremeGpuVideo_win.vcxproj (windows)
+- converter-osx/converter-osx.xcodeproj  (osx)
+- converter-win/ofxExtremeGpuVideo_win.sln (windows)
 
 ### 3. select format dxt1, dxt3, dxt5
 - unity is not supported dxt3 yet.
@@ -48,7 +48,7 @@ $ ruby video_to_gvintermediate.rb footage.mov
 4: uint32_t height
 8: uint32_t frame count
 12: float fps
-16: uint32_t fmt (DXT1 = 1, DXT5 = 5)
+16: uint32_t fmt (DXT1 = 1, DXT3 = 3, DXT5 = 5)
 20: uint32_t frame bytes
 24: raw frame storage (lz4 compressed)
 eof - (frame count) * 16: [(uint64_t, uint64_t)..<frame count] (address, size) of lz4, address is zero based from file head
