@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxExtremeGpuVideo.hpp"
 
+#define ENABLE_BENCHMARK 0
 class ofApp : public ofBaseApp {
 public:
     void setup();
@@ -21,5 +22,9 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofxExtremeGpuVideo _gpuVideo;
+#if ENABLE_BENCHMARK
+	std::array<ofxExtremeGpuVideo, 60> _videos;
+#else
+	ofxExtremeGpuVideo _gpuVideo;
+#endif
 };

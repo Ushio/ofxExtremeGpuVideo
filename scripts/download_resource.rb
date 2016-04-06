@@ -13,5 +13,6 @@ end
 FileUtils.copy(filename, "./../converter-osx/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../converter-win/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../example-player-osx/bin/data/", {:verbose => true})
+FileUtils.copy(filename, "./../example-player-win/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../Unity/Example/Assets/StreamingAssets", {:verbose => true})
 FileUtils.rm(filename, {:verbose => true})

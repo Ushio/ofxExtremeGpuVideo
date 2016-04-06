@@ -24,65 +24,16 @@ static const int kGpuVideoFmts[] = {GPU_COMPRESS_DXT1, GPU_COMPRESS_DXT3, GPU_CO
 //--------------------------------------------------------------
 void ofApp::setup(){
     _imgui.setup();
-    _gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_CPU_MEMORY_DECOMPRESSED);
-
-#if ENABLE_BENCHMARK
-    for(int i = 0 ; i < _videos.size() ; ++i) {
-        _videos[i].load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
-    }
-#endif
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    _gpuVideo.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
-    _gpuVideo.update();
-    
-#if ENABLE_BENCHMARK
-    float e = ofGetElapsedTimef();
-    for(int i = 0 ; i < _videos.size() ; ++i) {
-        float t = e + i * 3.0f;
-        _videos[i].setTime(fmodf(t, _videos[i].getDuration()));
-    }
-    
-    tbb::parallel_for(tbb::blocked_range<int>( 0, _videos.size(), 1 ), [=](const tbb::blocked_range< int >& range) {
-        for (int i = range.begin(); i != range.end(); i++) {
-            _videos[i].updateCPU();
-        }
-    });
-    for(int i = 0 ; i < _videos.size() ; ++i) {
-        _videos[i].uploadGPU();
-    }
-#endif
+
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(128);
-    
-    _gpuVideo.begin();
-    _gpuVideo.getPlaceHolderTexture().draw(0, 0);
-    _gpuVideo.end();
-
-#if ENABLE_BENCHMARK
-    float x = 0.0f;
-    float y = 0.0f;
-    float scale = 0.1f;
-    for(int i = 0 ; i < _videos.size() ; ++i) {
-        float w = _videos[i].getWidth() * scale;
-        float h = _videos[i].getHeight() * scale;
-        
-        _videos[i].begin();
-        _videos[i].getPlaceHolderTexture().draw(x, y, w, h);
-        _videos[i].end();
-        
-        x += w;
-        if(ofGetWidth() < x) {
-            x = 0;
-            y += h;
-        }
-    }
-#endif
 
     if(_isConverting) {
         ofSetColor(255);

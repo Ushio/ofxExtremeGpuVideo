@@ -12,10 +12,6 @@
 #include "GpuVideoStreamingTexture.hpp"
 #include "GpuVideoOnGpuMemoryTexture.hpp"
 
-#include "ofxExtremeGpuVideo.hpp"
-
-#define ENABLE_BENCHMARK 0
-
 class ofApp : public ofBaseApp{
 public:
     void setup();
@@ -38,13 +34,6 @@ public:
     
     ofxImGui _imgui;
     uint32_t _format = 0;
-    
-    ofxExtremeGpuVideo _gpuVideo;
-    
-#if ENABLE_BENCHMARK
-    // bench
-    std::array<ofxExtremeGpuVideo, 60> _videos;
-#endif
     
     bool _isConverting = false;
     std::vector<std::string> _imagePaths;
