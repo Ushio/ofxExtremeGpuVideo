@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		076302CCA669DA47E9F0B24B /* lz4.c in Sources */ = {isa = PBXBuildFile; fileRef = 787A97924FCF2F83978EEAD6 /* lz4.c */; };
+		07EFD2E92292EFC1444EAC1B /* GpuVideoOnGpuMemoryTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9AEC73E2419044B33B8D988 /* GpuVideoOnGpuMemoryTexture.cpp */; };
+		0C2321A5B95B5E2BD3098546 /* xxhash.c in Sources */ = {isa = PBXBuildFile; fileRef = 49390FE9328E35A41B61A103 /* xxhash.c */; };
+		30E627DBAD346AC285BCB3B2 /* lz4hc.c in Sources */ = {isa = PBXBuildFile; fileRef = 50C2608E9759CEF677129FFA /* lz4hc.c */; };
+		38FC2776261E578E0F51B4E6 /* GpuVideoReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFD2FD33B4C1CB87B29CB68B /* GpuVideoReader.cpp */; };
+		671E6CB5530ACCB38EB0B46A /* GpuVideoStreamingTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63D6C683F2486F1FD9036E42 /* GpuVideoStreamingTexture.cpp */; };
+		6D67B285D38C1F35CF0617B8 /* GpuVideoReaderDecompressed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46FA334DBA0B1DF3ACA95812 /* GpuVideoReaderDecompressed.cpp */; };
+		8CB5C3DEE5EEEC065AF5B3C0 /* ofxExtrimeGpuVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8DE12E0AE5A1CC4452D96B0 /* ofxExtrimeGpuVideo.cpp */; };
+		8D8225A748A13519BB37C752 /* lz4frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 42772E59F29D99864BA3FDE1 /* lz4frame.c */; };
+		D90564141CB4C031001F98F5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90564111CB4C031001F98F5 /* main.cpp */; };
+		D90564151CB4C031001F98F5 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D90564121CB4C031001F98F5 /* ofApp.cpp */; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		116BA1DE070EA0D658025311 /* GpuVideo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuVideo.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideo.hpp; sourceTree = SOURCE_ROOT; };
+		281A830445429C3D14A0A958 /* lz4frame_static.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lz4frame_static.h; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4frame_static.h; sourceTree = SOURCE_ROOT; };
+		3861A4935D9D45EA32DDEACF /* lz4frame.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lz4frame.h; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4frame.h; sourceTree = SOURCE_ROOT; };
+		42772E59F29D99864BA3FDE1 /* lz4frame.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lz4frame.c; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4frame.c; sourceTree = SOURCE_ROOT; };
+		46D7B67B0DF4C5EC67D4A20C /* lz4hc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lz4hc.h; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4hc.h; sourceTree = SOURCE_ROOT; };
+		46FA334DBA0B1DF3ACA95812 /* GpuVideoReaderDecompressed.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GpuVideoReaderDecompressed.cpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoReaderDecompressed.cpp; sourceTree = SOURCE_ROOT; };
+		49390FE9328E35A41B61A103 /* xxhash.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = xxhash.c; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/xxhash.c; sourceTree = SOURCE_ROOT; };
+		50C2608E9759CEF677129FFA /* lz4hc.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lz4hc.c; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4hc.c; sourceTree = SOURCE_ROOT; };
+		57DAF36D8A506C867C52398C /* GpuVideoStreamingTexture.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuVideoStreamingTexture.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoStreamingTexture.hpp; sourceTree = SOURCE_ROOT; };
+		603E3CCD66900DAA0427746D /* GpuVideoOnGpuMemoryTexture.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuVideoOnGpuMemoryTexture.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoOnGpuMemoryTexture.hpp; sourceTree = SOURCE_ROOT; };
+		63D6C683F2486F1FD9036E42 /* GpuVideoStreamingTexture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GpuVideoStreamingTexture.cpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoStreamingTexture.cpp; sourceTree = SOURCE_ROOT; };
+		787A97924FCF2F83978EEAD6 /* lz4.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = lz4.c; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4.c; sourceTree = SOURCE_ROOT; };
+		97248EAAE088FCBB1FF89936 /* GpuVideoReader.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuVideoReader.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoReader.hpp; sourceTree = SOURCE_ROOT; };
+		9BB316E6D63D3ACC455E20A5 /* GpuVideoTexture.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuVideoTexture.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoTexture.hpp; sourceTree = SOURCE_ROOT; };
+		AFD2FD33B4C1CB87B29CB68B /* GpuVideoReader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GpuVideoReader.cpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoReader.cpp; sourceTree = SOURCE_ROOT; };
+		B763FF195392C1B8D926C89A /* lz4.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = lz4.h; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/lz4.h; sourceTree = SOURCE_ROOT; };
+		C9AEC73E2419044B33B8D988 /* GpuVideoOnGpuMemoryTexture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GpuVideoOnGpuMemoryTexture.cpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoOnGpuMemoryTexture.cpp; sourceTree = SOURCE_ROOT; };
+		D4AD4FEDAEFF16FF6E2B1ADC /* xxhash.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = xxhash.h; path = ../../../addons/ofxExtremeGpuVideo/libs/lz4/lib/xxhash.h; sourceTree = SOURCE_ROOT; };
+		D50009ECE498C30FF165C379 /* ofxExtrimeGpuVideo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxExtrimeGpuVideo.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/ofxExtrimeGpuVideo.hpp; sourceTree = SOURCE_ROOT; };
+		D8DE12E0AE5A1CC4452D96B0 /* ofxExtrimeGpuVideo.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxExtrimeGpuVideo.cpp; path = ../../../addons/ofxExtremeGpuVideo/src/ofxExtrimeGpuVideo.cpp; sourceTree = SOURCE_ROOT; };
+		D90564111CB4C031001F98F5 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "../../example-player-src/main.cpp"; sourceTree = "<group>"; };
+		D90564121CB4C031001F98F5 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = "../../example-player-src/ofApp.cpp"; sourceTree = "<group>"; };
+		D90564131CB4C031001F98F5 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = "../../example-player-src/ofApp.h"; sourceTree = "<group>"; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E4B69B5B0A3A1756003C02F2 /* example-player-osxDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-player-osxDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
+		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		FC7F18CCFE6C143A2F80F7A1 /* GpuVideoReaderDecompressed.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GpuVideoReaderDecompressed.hpp; path = ../../../addons/ofxExtremeGpuVideo/src/GpuVideoReaderDecompressed.hpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		319B083E9C5BB5E80B87E353 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				5C11E92FF5280F1591B3F348 /* lz4 */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		418BEEB59DB9672FB257D1C7 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				787A97924FCF2F83978EEAD6 /* lz4.c */,
+				B763FF195392C1B8D926C89A /* lz4.h */,
+				42772E59F29D99864BA3FDE1 /* lz4frame.c */,
+				3861A4935D9D45EA32DDEACF /* lz4frame.h */,
+				281A830445429C3D14A0A958 /* lz4frame_static.h */,
+				50C2608E9759CEF677129FFA /* lz4hc.c */,
+				46D7B67B0DF4C5EC67D4A20C /* lz4hc.h */,
+				49390FE9328E35A41B61A103 /* xxhash.c */,
+				D4AD4FEDAEFF16FF6E2B1ADC /* xxhash.h */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		5487DBC255734D03D2C57786 /* ofxExtremeGpuVideo */ = {
+			isa = PBXGroup;
+			children = (
+				E69EECAC14CD659E76D4BA65 /* src */,
+				319B083E9C5BB5E80B87E353 /* libs */,
+			);
+			name = ofxExtremeGpuVideo;
+			sourceTree = "<group>";
+		};
+		5C11E92FF5280F1591B3F348 /* lz4 */ = {
+			isa = PBXGroup;
+			children = (
+				418BEEB59DB9672FB257D1C7 /* lib */,
+			);
+			name = lz4;
+			sourceTree = "<group>";
+		};
+		6948EE371B920CB800B5AC1A /* local_addons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = local_addons;
+			sourceTree = "<group>";
+		};
+		BB4B014C10F69532006C3DED /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				5487DBC255734D03D2C57786 /* ofxExtremeGpuVideo */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		E4328144138ABC890047C5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B69B4A0A3A1720003C02F2 = {
+			isa = PBXGroup;
+			children = (
+				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				BB4B014C10F69532006C3DED /* addons */,
+				6948EE371B920CB800B5AC1A /* local_addons */,
+				E4B69B5B0A3A1756003C02F2 /* example-player-osxDebug.app */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D90564111CB4C031001F98F5 /* main.cpp */,
+				D90564121CB4C031001F98F5 /* ofApp.cpp */,
+				D90564131CB4C031001F98F5 /* ofApp.h */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4EEC9E9138DF44700A80321 /* openFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */,
+				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
+			);
+			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		E69EECAC14CD659E76D4BA65 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				116BA1DE070EA0D658025311 /* GpuVideo.hpp */,
+				C9AEC73E2419044B33B8D988 /* GpuVideoOnGpuMemoryTexture.cpp */,
+				603E3CCD66900DAA0427746D /* GpuVideoOnGpuMemoryTexture.hpp */,
+				AFD2FD33B4C1CB87B29CB68B /* GpuVideoReader.cpp */,
+				97248EAAE088FCBB1FF89936 /* GpuVideoReader.hpp */,
+				46FA334DBA0B1DF3ACA95812 /* GpuVideoReaderDecompressed.cpp */,
+				FC7F18CCFE6C143A2F80F7A1 /* GpuVideoReaderDecompressed.hpp */,
+				63D6C683F2486F1FD9036E42 /* GpuVideoStreamingTexture.cpp */,
+				57DAF36D8A506C867C52398C /* GpuVideoStreamingTexture.hpp */,
+				9BB316E6D63D3ACC455E20A5 /* GpuVideoTexture.hpp */,
+				D8DE12E0AE5A1CC4452D96B0 /* ofxExtrimeGpuVideo.cpp */,
+				D50009ECE498C30FF165C379 /* ofxExtrimeGpuVideo.hpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B69B5A0A3A1756003C02F2 /* example-player-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-player-osx" */;
+			buildPhases = (
+				E4B69B580A3A1756003C02F2 /* Sources */,
+				E4B69B590A3A1756003C02F2 /* Frameworks */,
+				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
+				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+			);
+			name = "example-player-osx";
+			productName = myOFApp;
+			productReference = E4B69B5B0A3A1756003C02F2 /* example-player-osxDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-player-osx" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = E4B69B4A0A3A1720003C02F2;
+			productRefGroup = E4B69B4A0A3A1720003C02F2;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4328144138ABC890047C5CB /* Products */;
+					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E4B69B5A0A3A1756003C02F2 /* example-player-osx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworksDebug.a;
+			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n# Copy default icon file into App/Resources\nrsync -aved \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n# Copy libfmod and change install directory for fmod to run\nrsync -aved ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/\";\ninstall_name_tool -change @executable_path/libfmodex.dylib @executable_path/../Frameworks/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\n# Copy GLUT framework (must remove for AppStore submissions)\nrsync -aved ../../../libs/glut/lib/osx/GLUT.framework \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B69B580A3A1756003C02F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07EFD2E92292EFC1444EAC1B /* GpuVideoOnGpuMemoryTexture.cpp in Sources */,
+				38FC2776261E578E0F51B4E6 /* GpuVideoReader.cpp in Sources */,
+				6D67B285D38C1F35CF0617B8 /* GpuVideoReaderDecompressed.cpp in Sources */,
+				671E6CB5530ACCB38EB0B46A /* GpuVideoStreamingTexture.cpp in Sources */,
+				8CB5C3DEE5EEEC065AF5B3C0 /* ofxExtrimeGpuVideo.cpp in Sources */,
+				076302CCA669DA47E9F0B24B /* lz4.c in Sources */,
+				8D8225A748A13519BB37C752 /* lz4frame.c in Sources */,
+				30E627DBAD346AC285BCB3B2 /* lz4hc.c in Sources */,
+				D90564141CB4C031001F98F5 /* main.cpp in Sources */,
+				D90564151CB4C031001F98F5 /* ofApp.cpp in Sources */,
+				0C2321A5B95B5E2BD3098546 /* xxhash.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
+					../../../addons/ofxExtremeGpuVideo/src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4B69B4F0A3A1720003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
+					../../../addons/ofxExtremeGpuVideo/src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-mtune=native",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E4B69B600A3A1757003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
+					../../../addons/ofxExtremeGpuVideo/src,
+				);
+				ICON = "$(ICON_NAME_DEBUG)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = /Applications;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4B69B610A3A1757003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
+					../../../addons/ofxExtremeGpuVideo/src,
+				);
+				ICON = "$(ICON_NAME_RELEASE)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = /Applications;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-player-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B4E0A3A1720003C02F2 /* Debug */,
+				E4B69B4F0A3A1720003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-player-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B600A3A1757003C02F2 /* Debug */,
+				E4B69B610A3A1757003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+}
