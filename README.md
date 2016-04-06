@@ -29,8 +29,8 @@ $ ruby video_to_gvintermediate.rb footage.mov
 ```
 
 ### 2. open openframeworks project file
-- ofxExtremeGpuVideo_osx/GpuVideo.xcodeproj  (osx)
-- ofxExtremeGpuVideo_win/ofxExtremeGpuVideo_win.vcxproj (windows)
+- converter-osx/GpuVideo.xcodeproj  (osx)
+- converter-win/ofxExtremeGpuVideo_win.vcxproj (windows)
 
 ### 3. select format dxt1, dxt3, dxt5
 - unity is not supported dxt3 yet.

@@ -10,7 +10,7 @@ open(filename, 'wb') do |file|
     end
 end
 
-FileUtils.copy(filename, "./../ofxExtremeGpuVideo_osx/bin/data/", {:verbose => true})
-FileUtils.copy(filename, "./../ofxExtremeGpuVideo_win/bin/data/", {:verbose => true})
+FileUtils.copy(filename, "./../converter-osx/bin/data/", {:verbose => true})
+FileUtils.copy(filename, "./../converter-win/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../Unity/Example/Assets/StreamingAssets", {:verbose => true})
 FileUtils.rm(filename, {:verbose => true})
