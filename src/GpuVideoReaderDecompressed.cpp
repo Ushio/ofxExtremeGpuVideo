@@ -17,7 +17,7 @@ GpuVideoReaderDecompressed::GpuVideoReaderDecompressed(std::shared_ptr<IGpuVideo
     _frameBytes = reader->getFrameBytes();
     
     _decompressed.resize(_frameCount * _frameBytes);
-    for(int i = 0 ; i < _frameCount ; ++i) {
+    for(uint32_t i = 0 ; i < _frameCount ; ++i) {
         reader->read(_decompressed.data() + i * _frameBytes, i);
     }
 }

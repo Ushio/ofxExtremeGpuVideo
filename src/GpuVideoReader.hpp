@@ -7,9 +7,11 @@
 //
 
 #pragma once
+#include <cstdlib>
 #include <vector>
-#include <stdlib.h>
+#include <memory>
 #include "GpuVideo.hpp"
+#include "GpuVideoIO.hpp"
 
 class IGpuVideoReader {
 public:
@@ -54,7 +56,7 @@ private:
     uint32_t _frameBytes = 0;
     std::vector<Lz4Block> _lz4Blocks;
     
-    FILE *_fp = nullptr;
+	std::unique_ptr<GpuVideoIO> _io;
     std::vector<uint8_t> _memory;
     mutable std::vector<uint8_t> _lz4Buffer;
     

@@ -76,7 +76,7 @@ void ofApp::draw(){
                 _lz4blocks.push_back(lz4block);
                 
                 // 書き込み
-                if(fwrite(_lz4CompressBuffer.data() + i * compressBound, 1, lz4sizes[i], _fp) != lz4sizes[i]) {
+                if(_io->write(_lz4CompressBuffer.data() + i * compressBound, lz4sizes[i]) != lz4sizes[i]) {
                     assert(0);
                 }
             }
@@ -85,13 +85,12 @@ void ofApp::draw(){
         } else {
             // 最後に住所を記録
             uint32_t size = _lz4blocks.size() * sizeof(Lz4Block);
-            if(fwrite(_lz4blocks.data(), 1, size, _fp) != size) {
+            if(_io->write(_lz4blocks.data(), size) != size) {
                 assert(0);
             }
             
             // ファイルをクローズ
-            fclose(_fp);
-            _fp = nullptr;
+			_io.reset();
             
             // 終了
             _isConverting = false;
@@ -190,10 +189,10 @@ void ofApp::startCompression() {
     _bufferSize = squish::GetStorageRequirements(_width, _height, _squishFlag);
     
     // 書き出し開始
-    _fp = fopen(_dstPath.c_str(), "wb");
+	_io = std::make_unique<GpuVideoIO>(_dstPath.c_str(), "wb");
     
     // ヘッダー情報書き出し
-#define W(v) if(fwrite(&v, 1, sizeof(v), _fp) != sizeof(v)) { assert(0); }
+#define W(v) if(_io->write(&v, sizeof(v)) != sizeof(v)) { assert(0); }
     W(_width);
     W(_height);
     

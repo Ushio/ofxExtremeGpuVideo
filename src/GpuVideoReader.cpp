@@ -11,20 +11,16 @@
 #include <algorithm>
 #include "lz4.h"
 
-
 GpuVideoReader::GpuVideoReader(const char *path, bool onMemory) {
     _onMemory = onMemory;
     
-    _fp = fopen(path, "rb");
-    if(_fp == nullptr) {
-        throw std::runtime_error("file not found");
-    }
+	_io = std::make_unique<GpuVideoIO>(path, "rb");
     
-    fseek(_fp, 0, SEEK_END);
-    _rawSize = ftell(_fp);
-    fseek(_fp, 0, SEEK_SET);
-    
-#define R(v) if(fread(&v, 1, sizeof(v), _fp) != sizeof(v)) { assert(0); }
+	_io->seek(0, SEEK_END);
+    _rawSize = _io->tellg();
+	_io->seek(0, SEEK_SET);
+
+#define R(v) if(_io->read(&v, sizeof(v)) != sizeof(v)) { assert(0); }
     R(_width);
     R(_height);
     R(_frameCount);
@@ -37,22 +33,21 @@ GpuVideoReader::GpuVideoReader(const char *path, bool onMemory) {
     _lz4Blocks.resize(_frameCount);
     size_t s = sizeof(Lz4Block);
     
-    fseek(_fp, _rawSize - sizeof(Lz4Block) * _frameCount, SEEK_SET);
-    if(fread(_lz4Blocks.data(), 1, sizeof(Lz4Block) * _frameCount, _fp) != sizeof(Lz4Block) * _frameCount) {
+	_io->seek(_rawSize - sizeof(Lz4Block) * _frameCount, SEEK_SET);
+    if(_io->read(_lz4Blocks.data(), sizeof(Lz4Block) * _frameCount) != sizeof(Lz4Block) * _frameCount) {
         assert(0);
     }
     
     // 必要なら全部読む
     if(_onMemory) {
         _memory.resize(_rawSize);
-        fseek(_fp, 0, SEEK_SET);
-        if(fread(_memory.data(), 1, _rawSize, _fp) != _rawSize) {
+		_io->seek(0, SEEK_SET);
+        if(_io->read(_memory.data(), _rawSize) != _rawSize) {
             assert(0);
         }
-        fclose(_fp);
-        _fp = nullptr;
+		_io.reset();
     } else {
-        fseek(_fp, kRawMemoryAt, SEEK_SET);
+		_io->seek(kRawMemoryAt, SEEK_SET);
         
         uint64_t buffer_size = 0;
         for(auto b : _lz4Blocks) {
@@ -63,22 +58,18 @@ GpuVideoReader::GpuVideoReader(const char *path, bool onMemory) {
     }
 }
 GpuVideoReader::~GpuVideoReader() {
-    if(_onMemory) {
-        
-    } else {
-        fclose(_fp);
-    }
+
 }
 void GpuVideoReader::read(uint8_t *dst, int frame) const {
     assert(0 <= frame && frame < _lz4Blocks.size());
     Lz4Block lz4block = _lz4Blocks[frame];
     if(_onMemory) {
-        LZ4_decompress_safe((const char *)_memory.data() + lz4block.address, (char *)dst, lz4block.size, _frameBytes);
+        LZ4_decompress_safe((const char *)_memory.data() + lz4block.address, (char *)dst, static_cast<int>(lz4block.size), _frameBytes);
     } else {
-        fseek(_fp, lz4block.address, SEEK_SET);
-        if(fread(_lz4Buffer.data(), 1, lz4block.size, _fp) != lz4block.size) {
+		_io->seek(lz4block.address, SEEK_SET);
+        if(_io->read(_lz4Buffer.data(), lz4block.size) != lz4block.size) {
             assert(0);
         }
-        LZ4_decompress_safe((const char *)_lz4Buffer.data(), (char *)dst, lz4block.size, _frameBytes);
+        LZ4_decompress_safe((const char *)_lz4Buffer.data(), (char *)dst, static_cast<int>(lz4block.size), _frameBytes);
     }
 }

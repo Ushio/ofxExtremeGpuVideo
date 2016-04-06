@@ -98,6 +98,9 @@
     <ClInclude Include="..\example-player-src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\GpuVideoIO.hpp">
+      <Filter>addons\ofxExtremeGpuVideo\src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

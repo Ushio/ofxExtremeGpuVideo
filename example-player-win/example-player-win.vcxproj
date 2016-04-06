@@ -197,6 +197,7 @@
     <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4hc.h" />
     <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\xxhash.h" />
     <ClInclude Include="..\example-player-src\ofApp.h" />
+    <ClInclude Include="..\src\GpuVideoIO.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

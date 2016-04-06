@@ -239,6 +239,9 @@
     <ClInclude Include="..\converter-src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\GpuVideoIO.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\libs\squish-1.11_lib\singlecolourlookup.inl">

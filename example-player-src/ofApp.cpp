@@ -13,7 +13,6 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
 #if ENABLE_BENCHMARK
 	float e = ofGetElapsedTimef();
 	for (int i = 0; i < _videos.size(); ++i) {

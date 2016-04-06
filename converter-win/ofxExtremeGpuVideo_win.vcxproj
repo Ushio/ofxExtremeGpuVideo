@@ -271,6 +271,7 @@ if errorlevel 1 exit 0 else exit %errorlevel%</Command>
     <ClInclude Include="..\libs\squish-1.11_lib\singlecolourfit.h" />
     <ClInclude Include="..\libs\squish-1.11_lib\squish.h" />
     <ClInclude Include="..\src\GpuVideo.hpp" />
+    <ClInclude Include="..\src\GpuVideoIO.hpp" />
     <ClInclude Include="..\src\GpuVideoOnGpuMemoryTexture.hpp" />
     <ClInclude Include="..\src\GpuVideoReader.hpp" />
     <ClInclude Include="..\src\GpuVideoReaderDecompressed.hpp" />

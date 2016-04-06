@@ -8,6 +8,7 @@
 #include "ofxImGui.h"
 
 #include "GPUVideo.hpp"
+#include "GpuVideoIO.hpp"
 #include "GpuVideoReader.hpp"
 #include "GpuVideoStreamingTexture.hpp"
 #include "GpuVideoOnGpuMemoryTexture.hpp"
@@ -50,5 +51,5 @@ public:
     
     int _index = 0;
     
-    FILE *_fp = nullptr;
+	std::unique_ptr<GpuVideoIO> _io;
 };
