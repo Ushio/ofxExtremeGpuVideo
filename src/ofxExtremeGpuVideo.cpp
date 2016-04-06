@@ -6,7 +6,7 @@
 //
 //
 
-#include "ofxExtrimeGpuVideo.hpp"
+#include "ofxExtremeGpuVideo.hpp"
 
 #include "GpuVideoReader.hpp"
 #include "GpuVideoReaderDecompressed.hpp"
@@ -15,7 +15,7 @@
 
 #define GLSL(version, shader)  "#version " #version "\n" #shader
 
-void ofxExtrimeGpuVideo::load(const std::string &name, Mode mode, GLenum interpolation, GLenum wrap) {
+void ofxExtremeGpuVideo::load(const std::string &name, Mode mode, GLenum interpolation, GLenum wrap) {
     if(_shader.isLoaded() == false) {
         if(ofIsGLProgrammableRenderer()) {
             std::string vs = GLSL(150,
@@ -112,4 +112,4 @@ void ofxExtrimeGpuVideo::load(const std::string &name, Mode mode, GLenum interpo
     _isLoaded = true;
 }
 
-ofShader ofxExtrimeGpuVideo::_shader;
+ofShader ofxExtremeGpuVideo::_shader;

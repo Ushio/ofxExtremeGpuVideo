@@ -12,7 +12,7 @@
 #include "GpuVideoStreamingTexture.hpp"
 #include "GpuVideoOnGpuMemoryTexture.hpp"
 
-#include "ofxExtrimeGpuVideo.hpp"
+#include "ofxExtremeGpuVideo.hpp"
 
 #define ENABLE_BENCHMARK 0
 
@@ -39,11 +39,11 @@ public:
     ofxImGui _imgui;
     uint32_t _format = 0;
     
-    ofxExtrimeGpuVideo _gpuVideo;
+    ofxExtremeGpuVideo _gpuVideo;
     
 #if ENABLE_BENCHMARK
     // bench
-    std::array<ofxExtrimeGpuVideo, 60> _videos;
+    std::array<ofxExtremeGpuVideo, 60> _videos;
 #endif
     
     bool _isConverting = false;

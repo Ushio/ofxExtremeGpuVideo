@@ -232,7 +232,7 @@ if errorlevel 1 exit 0 else exit %errorlevel%</Command>
     <ClCompile Include="..\src\GpuVideoReader.cpp" />
     <ClCompile Include="..\src\GpuVideoReaderDecompressed.cpp" />
     <ClCompile Include="..\src\GpuVideoStreamingTexture.cpp" />
-    <ClCompile Include="..\src\ofxExtrimeGpuVideo.cpp" />
+    <ClCompile Include="..\src\ofxExtremeGpuVideo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\converter-src\ofApp.h" />
@@ -276,7 +276,7 @@ if errorlevel 1 exit 0 else exit %errorlevel%</Command>
     <ClInclude Include="..\src\GpuVideoReaderDecompressed.hpp" />
     <ClInclude Include="..\src\GpuVideoStreamingTexture.hpp" />
     <ClInclude Include="..\src\GpuVideoTexture.hpp" />
-    <ClInclude Include="..\src\ofxExtrimeGpuVideo.hpp" />
+    <ClInclude Include="..\src\ofxExtremeGpuVideo.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\libs\squish-1.11_lib\singlecolourlookup.inl" />

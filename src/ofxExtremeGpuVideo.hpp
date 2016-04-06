@@ -13,7 +13,7 @@
 #include "ofMain.h"
 #include "GpuVideoTexture.hpp"
 
-class ofxExtrimeGpuVideo {
+class ofxExtremeGpuVideo {
 public:
     enum Mode {
         /* streaming from storage */

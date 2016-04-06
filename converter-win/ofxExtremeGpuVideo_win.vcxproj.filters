@@ -99,7 +99,7 @@
     <ClCompile Include="..\src\GpuVideoStreamingTexture.cpp">
       <Filter>src\ofxExtremeGpuVideo</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ofxExtrimeGpuVideo.cpp">
+    <ClCompile Include="..\src\ofxExtremeGpuVideo.cpp">
       <Filter>src\ofxExtremeGpuVideo</Filter>
     </ClCompile>
     <ClCompile Include="..\src\GpuVideoOnGpuMemoryTexture.cpp">
@@ -227,7 +227,7 @@
     <ClInclude Include="..\src\GpuVideoTexture.hpp">
       <Filter>src\ofxExtremeGpuVideo</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\ofxExtrimeGpuVideo.hpp">
+    <ClInclude Include="..\src\ofxExtremeGpuVideo.hpp">
       <Filter>src\ofxExtremeGpuVideo</Filter>
     </ClInclude>
     <ClInclude Include="..\src\GpuVideo.hpp">

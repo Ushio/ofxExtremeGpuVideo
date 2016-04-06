@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-    _gpuVideo.load("footage.gv", ofxExtrimeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+    _gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
 }
 
 //--------------------------------------------------------------

@@ -24,11 +24,11 @@ static const int kGpuVideoFmts[] = {GPU_COMPRESS_DXT1, GPU_COMPRESS_DXT3, GPU_CO
 //--------------------------------------------------------------
 void ofApp::setup(){
     _imgui.setup();
-    _gpuVideo.load("footage.gv", ofxExtrimeGpuVideo::GPU_VIDEO_STREAMING_FROM_CPU_MEMORY_DECOMPRESSED);
+    _gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_CPU_MEMORY_DECOMPRESSED);
 
 #if ENABLE_BENCHMARK
     for(int i = 0 ; i < _videos.size() ; ++i) {
-        _videos[i].load("footage.gv", ofxExtrimeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+        _videos[i].load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
     }
 #endif
 }

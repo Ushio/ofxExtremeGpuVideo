@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxExtrimeGpuVideo.hpp"
+#include "ofxExtremeGpuVideo.hpp"
 
 class ofApp : public ofBaseApp {
 public:
@@ -21,5 +21,5 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofxExtrimeGpuVideo _gpuVideo;
+    ofxExtremeGpuVideo _gpuVideo;
 };
