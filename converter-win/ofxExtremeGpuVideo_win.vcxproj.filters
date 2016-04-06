@@ -4,9 +4,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\ofxExtremeGpuVideo">
-      <UniqueIdentifier>{69c517f0-d843-4c15-b7dd-341238b56edf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\squish">
       <UniqueIdentifier>{9fc252b6-57f5-4d15-bbce-071490e31833}</UniqueIdentifier>
     </Filter>
@@ -16,32 +13,14 @@
     <Filter Include="src\ofxImGui">
       <UniqueIdentifier>{cbe92338-071e-44c0-82b9-18b2dadfa22b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ofxExtremeGpuVideo">
+      <UniqueIdentifier>{fa742311-3f91-4022-8fc5-fbe7a83bc999}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ofxExtremeGpuVideo_App\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ofxExtremeGpuVideo_App\ofApp.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoOnGpuMemoryTexture.cpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoReader.cpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoReaderDecompressed.cpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ofxExtremeGpuVideo\GpuVideoStreamingTexture.cpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ofxExtremeGpuVideo\ofxExtrimeGpuVideo.cpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClCompile>
     <ClCompile Include="..\libs\squish-1.11_lib\clusterfit.cpp">
       <Filter>src\squish</Filter>
     </ClCompile>
@@ -111,32 +90,29 @@
     <ClCompile Include="..\libs\ofxImGui\src\ofxImGui.cpp">
       <Filter>src\ofxImGui</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GpuVideoReader.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoReaderDecompressed.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoStreamingTexture.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ofxExtrimeGpuVideo.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoOnGpuMemoryTexture.cpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\converter-src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\converter-src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ofxExtremeGpuVideo_App\ofApp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideo.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoOnGpuMemoryTexture.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoReader.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoReaderDecompressed.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoStreamingTexture.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\GpuVideoTexture.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ofxExtremeGpuVideo\ofxExtrimeGpuVideo.hpp">
-      <Filter>src\ofxExtremeGpuVideo</Filter>
-    </ClInclude>
     <ClInclude Include="..\libs\squish-1.11_lib\clusterfit.h">
       <Filter>src\squish</Filter>
     </ClInclude>
@@ -238,6 +214,30 @@
     </ClInclude>
     <ClInclude Include="..\libs\ofxImGui\src\ThemeTest.h">
       <Filter>src\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoReader.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoReaderDecompressed.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoStreamingTexture.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoTexture.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxExtrimeGpuVideo.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideo.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoOnGpuMemoryTexture.hpp">
+      <Filter>src\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\converter-src\ofApp.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
