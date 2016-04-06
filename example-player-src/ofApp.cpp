@@ -1,5 +1,19 @@
 #include "ofApp.h"
 
+#if CPU_PARALLEL_DECODE
+#include <tbb/tbb.h>
+
+#ifdef _MSC_VER
+#ifdef _DEBUG
+#define TBB_LIB_EXT "_debug.lib"
+#else
+#define TBB_LIB_EXT ".lib"
+#endif
+#pragma comment(lib, "tbb" TBB_LIB_EXT)
+#pragma comment(lib, "tbbmalloc" TBB_LIB_EXT)
+#endif
+
+#endif
 //--------------------------------------------------------------
 void ofApp::setup() {
 #if ENABLE_BENCHMARK
@@ -14,12 +28,32 @@ void ofApp::setup() {
 //--------------------------------------------------------------
 void ofApp::update(){
 #if ENABLE_BENCHMARK
+	// GetTime
 	float e = ofGetElapsedTimef();
+
+#if CPU_PARALLEL_DECODE
+	// Advanced Multithread Update
+	for (int i = 0; i < _videos.size(); ++i) {
+		float t = e + i * 3.0f;
+		_videos[i].setTime(fmodf(t, _videos[i].getDuration()));
+	}
+	tbb::parallel_for(tbb::blocked_range<int>(0, _videos.size(), 1), [=](const tbb::blocked_range< int >& range) {
+		for (int i = range.begin(); i != range.end(); i++) {
+			_videos[i].updateCPU();
+		}
+	});
+	for (int i = 0; i < _videos.size(); ++i) {
+		_videos[i].uploadGPU();
+	}
+#else
+	// Simple Update
 	for (int i = 0; i < _videos.size(); ++i) {
 		float t = e + i * 3.0f;
 		_videos[i].setTime(fmodf(t, _videos[i].getDuration()));
 		_videos[i].update();
 	}
+#endif
+
 #else
 	_gpuVideo.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
 	_gpuVideo.update();

@@ -3,7 +3,12 @@
 #include "ofMain.h"
 #include "ofxExtremeGpuVideo.hpp"
 
+/* bench mark test */
 #define ENABLE_BENCHMARK 0
+
+/* MultiThread test */
+#define CPU_PARALLEL_DECODE 0
+
 class ofApp : public ofBaseApp {
 public:
     void setup();
