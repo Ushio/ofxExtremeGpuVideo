@@ -14,7 +14,7 @@
 GpuVideoReader::GpuVideoReader(const char *path, bool onMemory) {
     _onMemory = onMemory;
     
-	_io = std::make_unique<GpuVideoIO>(path, "rb");
+	_io = std::unique_ptr<GpuVideoIO>(new GpuVideoIO(path, "rb"));
     
 	_io->seek(0, SEEK_END);
     _rawSize = _io->tellg();

@@ -31,13 +31,13 @@
 		D92D92F51CAB6C84009772B6 /* EngineGLFW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92D92E71CAB6C84009772B6 /* EngineGLFW.cpp */; };
 		D92D92F61CAB6C84009772B6 /* EngineOpenGLES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92D92E91CAB6C84009772B6 /* EngineOpenGLES.cpp */; };
 		D92D92F71CAB6C84009772B6 /* ofxImGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92D92EC1CAB6C84009772B6 /* ofxImGui.cpp */; };
-		D98571961CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D985718B1CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.cpp */; };
-		D98571971CB4C1AD000DEAAA /* GpuVideoReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D985718D1CB4C1AD000DEAAA /* GpuVideoReader.cpp */; };
-		D98571981CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D985718F1CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.cpp */; };
-		D98571991CB4C1AD000DEAAA /* GpuVideoStreamingTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98571911CB4C1AD000DEAAA /* GpuVideoStreamingTexture.cpp */; };
-		D985719A1CB4C1AD000DEAAA /* ofxExtremeGpuVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98571941CB4C1AD000DEAAA /* ofxExtremeGpuVideo.cpp */; };
-		D9B557751CB4B0FC009FBE0F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9B557721CB4B0FC009FBE0F /* main.cpp */; };
-		D9B557761CB4B0FC009FBE0F /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9B557731CB4B0FC009FBE0F /* ofApp.cpp */; };
+		D9A44BC71CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BBC1CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.cpp */; };
+		D9A44BC81CB4EEC400D468EF /* GpuVideoReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BBE1CB4EEC400D468EF /* GpuVideoReader.cpp */; };
+		D9A44BC91CB4EEC400D468EF /* GpuVideoReaderDecompressed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BC01CB4EEC400D468EF /* GpuVideoReaderDecompressed.cpp */; };
+		D9A44BCA1CB4EEC400D468EF /* GpuVideoStreamingTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BC21CB4EEC400D468EF /* GpuVideoStreamingTexture.cpp */; };
+		D9A44BCB1CB4EEC400D468EF /* ofxExtremeGpuVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BC51CB4EEC400D468EF /* ofxExtremeGpuVideo.cpp */; };
+		D9A44BE71CB4EF1E00D468EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BE41CB4EF1E00D468EF /* main.cpp */; };
+		D9A44BE81CB4EF1E00D468EF /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9A44BE51CB4EF1E00D468EF /* ofApp.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 /* End PBXBuildFile section */
 
@@ -131,21 +131,22 @@
 		D92D92EC1CAB6C84009772B6 /* ofxImGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxImGui.cpp; sourceTree = "<group>"; };
 		D92D92ED1CAB6C84009772B6 /* ofxImGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxImGui.h; sourceTree = "<group>"; };
 		D92D92EE1CAB6C84009772B6 /* ThemeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeTest.h; sourceTree = "<group>"; };
-		D985718A1CB4C1AD000DEAAA /* GpuVideo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideo.hpp; sourceTree = "<group>"; };
-		D985718B1CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoOnGpuMemoryTexture.cpp; sourceTree = "<group>"; };
-		D985718C1CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoOnGpuMemoryTexture.hpp; sourceTree = "<group>"; };
-		D985718D1CB4C1AD000DEAAA /* GpuVideoReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoReader.cpp; sourceTree = "<group>"; };
-		D985718E1CB4C1AD000DEAAA /* GpuVideoReader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoReader.hpp; sourceTree = "<group>"; };
-		D985718F1CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoReaderDecompressed.cpp; sourceTree = "<group>"; };
-		D98571901CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoReaderDecompressed.hpp; sourceTree = "<group>"; };
-		D98571911CB4C1AD000DEAAA /* GpuVideoStreamingTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoStreamingTexture.cpp; sourceTree = "<group>"; };
-		D98571921CB4C1AD000DEAAA /* GpuVideoStreamingTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoStreamingTexture.hpp; sourceTree = "<group>"; };
-		D98571931CB4C1AD000DEAAA /* GpuVideoTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoTexture.hpp; sourceTree = "<group>"; };
-		D98571941CB4C1AD000DEAAA /* ofxExtremeGpuVideo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxExtremeGpuVideo.cpp; sourceTree = "<group>"; };
-		D98571951CB4C1AD000DEAAA /* ofxExtremeGpuVideo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ofxExtremeGpuVideo.hpp; sourceTree = "<group>"; };
-		D9B557721CB4B0FC009FBE0F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		D9B557731CB4B0FC009FBE0F /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
-		D9B557741CB4B0FC009FBE0F /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
+		D9A44BBA1CB4EEC400D468EF /* GpuVideo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideo.hpp; sourceTree = "<group>"; };
+		D9A44BBB1CB4EEC400D468EF /* GpuVideoIO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoIO.hpp; sourceTree = "<group>"; };
+		D9A44BBC1CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoOnGpuMemoryTexture.cpp; sourceTree = "<group>"; };
+		D9A44BBD1CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoOnGpuMemoryTexture.hpp; sourceTree = "<group>"; };
+		D9A44BBE1CB4EEC400D468EF /* GpuVideoReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoReader.cpp; sourceTree = "<group>"; };
+		D9A44BBF1CB4EEC400D468EF /* GpuVideoReader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoReader.hpp; sourceTree = "<group>"; };
+		D9A44BC01CB4EEC400D468EF /* GpuVideoReaderDecompressed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoReaderDecompressed.cpp; sourceTree = "<group>"; };
+		D9A44BC11CB4EEC400D468EF /* GpuVideoReaderDecompressed.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoReaderDecompressed.hpp; sourceTree = "<group>"; };
+		D9A44BC21CB4EEC400D468EF /* GpuVideoStreamingTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GpuVideoStreamingTexture.cpp; sourceTree = "<group>"; };
+		D9A44BC31CB4EEC400D468EF /* GpuVideoStreamingTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoStreamingTexture.hpp; sourceTree = "<group>"; };
+		D9A44BC41CB4EEC400D468EF /* GpuVideoTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GpuVideoTexture.hpp; sourceTree = "<group>"; };
+		D9A44BC51CB4EEC400D468EF /* ofxExtremeGpuVideo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxExtremeGpuVideo.cpp; sourceTree = "<group>"; };
+		D9A44BC61CB4EEC400D468EF /* ofxExtremeGpuVideo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ofxExtremeGpuVideo.hpp; sourceTree = "<group>"; };
+		D9A44BE41CB4EF1E00D468EF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D9A44BE51CB4EF1E00D468EF /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
+		D9A44BE61CB4EF1E00D468EF /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* GpuVideoDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpuVideoDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
@@ -290,24 +291,36 @@
 			path = ../libs/ofxImGui/src;
 			sourceTree = "<group>";
 		};
-		D9B557561CB4AFBE009FBE0F /* src */ = {
+		D9A44BB91CB4EEC400D468EF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D985718A1CB4C1AD000DEAAA /* GpuVideo.hpp */,
-				D985718B1CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.cpp */,
-				D985718C1CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.hpp */,
-				D985718D1CB4C1AD000DEAAA /* GpuVideoReader.cpp */,
-				D985718E1CB4C1AD000DEAAA /* GpuVideoReader.hpp */,
-				D985718F1CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.cpp */,
-				D98571901CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.hpp */,
-				D98571911CB4C1AD000DEAAA /* GpuVideoStreamingTexture.cpp */,
-				D98571921CB4C1AD000DEAAA /* GpuVideoStreamingTexture.hpp */,
-				D98571931CB4C1AD000DEAAA /* GpuVideoTexture.hpp */,
-				D98571941CB4C1AD000DEAAA /* ofxExtremeGpuVideo.cpp */,
-				D98571951CB4C1AD000DEAAA /* ofxExtremeGpuVideo.hpp */,
+				D9A44BBA1CB4EEC400D468EF /* GpuVideo.hpp */,
+				D9A44BBB1CB4EEC400D468EF /* GpuVideoIO.hpp */,
+				D9A44BBC1CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.cpp */,
+				D9A44BBD1CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.hpp */,
+				D9A44BBE1CB4EEC400D468EF /* GpuVideoReader.cpp */,
+				D9A44BBF1CB4EEC400D468EF /* GpuVideoReader.hpp */,
+				D9A44BC01CB4EEC400D468EF /* GpuVideoReaderDecompressed.cpp */,
+				D9A44BC11CB4EEC400D468EF /* GpuVideoReaderDecompressed.hpp */,
+				D9A44BC21CB4EEC400D468EF /* GpuVideoStreamingTexture.cpp */,
+				D9A44BC31CB4EEC400D468EF /* GpuVideoStreamingTexture.hpp */,
+				D9A44BC41CB4EEC400D468EF /* GpuVideoTexture.hpp */,
+				D9A44BC51CB4EEC400D468EF /* ofxExtremeGpuVideo.cpp */,
+				D9A44BC61CB4EEC400D468EF /* ofxExtremeGpuVideo.hpp */,
 			);
 			name = src;
 			path = ../src;
+			sourceTree = "<group>";
+		};
+		D9A44BE31CB4EF1E00D468EF /* converter-src */ = {
+			isa = PBXGroup;
+			children = (
+				D9A44BE41CB4EF1E00D468EF /* main.cpp */,
+				D9A44BE51CB4EF1E00D468EF /* ofApp.cpp */,
+				D9A44BE61CB4EF1E00D468EF /* ofApp.h */,
+			);
+			name = "converter-src";
+			path = "../converter-src";
 			sourceTree = "<group>";
 		};
 		D9B557681CB4AFE3009FBE0F /* libs */ = {
@@ -320,22 +333,12 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
-		D9B557711CB4B0FC009FBE0F /* converter-src */ = {
-			isa = PBXGroup;
-			children = (
-				D9B557721CB4B0FC009FBE0F /* main.cpp */,
-				D9B557731CB4B0FC009FBE0F /* ofApp.cpp */,
-				D9B557741CB4B0FC009FBE0F /* ofApp.h */,
-			);
-			name = "converter-src";
-			path = "../../converter-src";
-			sourceTree = "<group>";
-		};
 		D9E29FC41CB27C0800F52EB1 /* ofxExtremeGpuVideo */ = {
 			isa = PBXGroup;
 			children = (
+				D9A44BE31CB4EF1E00D468EF /* converter-src */,
+				D9A44BB91CB4EEC400D468EF /* src */,
 				D9B557681CB4AFE3009FBE0F /* libs */,
-				D9B557561CB4AFBE009FBE0F /* src */,
 			);
 			name = ofxExtremeGpuVideo;
 			path = ../../ofxExtremeGpuVideo;
@@ -367,7 +370,6 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				D9B557711CB4B0FC009FBE0F /* converter-src */,
 				D9E29FC41CB27C0800F52EB1 /* ofxExtremeGpuVideo */,
 			);
 			path = src;
@@ -481,23 +483,23 @@
 				D92D92F51CAB6C84009772B6 /* EngineGLFW.cpp in Sources */,
 				D92D92941CAB6AC1009772B6 /* lz4.c in Sources */,
 				D92D92F01CAB6C84009772B6 /* imgui_demo.cpp in Sources */,
-				D98571961CB4C1AD000DEAAA /* GpuVideoOnGpuMemoryTexture.cpp in Sources */,
+				D9A44BC71CB4EEC400D468EF /* GpuVideoOnGpuMemoryTexture.cpp in Sources */,
 				D92D92B81CAB6AD1009772B6 /* squish.cpp in Sources */,
-				D9B557761CB4B0FC009FBE0F /* ofApp.cpp in Sources */,
 				D92D92EF1CAB6C84009772B6 /* imgui.cpp in Sources */,
+				D9A44BE81CB4EF1E00D468EF /* ofApp.cpp in Sources */,
 				D92D92B21CAB6AD1009772B6 /* colourblock.cpp in Sources */,
 				D92D92F11CAB6C84009772B6 /* imgui_draw.cpp in Sources */,
-				D9B557751CB4B0FC009FBE0F /* main.cpp in Sources */,
 				D92D92F41CAB6C84009772B6 /* BaseTheme.cpp in Sources */,
+				D9A44BE71CB4EF1E00D468EF /* main.cpp in Sources */,
 				D92D92971CAB6AC1009772B6 /* xxhash.c in Sources */,
-				D985719A1CB4C1AD000DEAAA /* ofxExtremeGpuVideo.cpp in Sources */,
+				D9A44BCB1CB4EEC400D468EF /* ofxExtremeGpuVideo.cpp in Sources */,
 				D92D92951CAB6AC1009772B6 /* lz4frame.c in Sources */,
 				D92D92B31CAB6AD1009772B6 /* colourfit.cpp in Sources */,
 				D92D92F61CAB6C84009772B6 /* EngineOpenGLES.cpp in Sources */,
-				D98571981CB4C1AD000DEAAA /* GpuVideoReaderDecompressed.cpp in Sources */,
+				D9A44BC91CB4EEC400D468EF /* GpuVideoReaderDecompressed.cpp in Sources */,
 				D92D92B11CAB6AD1009772B6 /* clusterfit.cpp in Sources */,
-				D98571971CB4C1AD000DEAAA /* GpuVideoReader.cpp in Sources */,
-				D98571991CB4C1AD000DEAAA /* GpuVideoStreamingTexture.cpp in Sources */,
+				D9A44BC81CB4EEC400D468EF /* GpuVideoReader.cpp in Sources */,
+				D9A44BCA1CB4EEC400D468EF /* GpuVideoStreamingTexture.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

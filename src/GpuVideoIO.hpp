@@ -41,7 +41,7 @@ public:
 #ifdef _MSC_VER
 		return _ftelli64(_fp);
 #else
-		return ftello(fp);
+		return ftello(_fp);
 #endif
 	}
 	std::size_t read(void *dst, std::size_t size) {

@@ -189,7 +189,7 @@ void ofApp::startCompression() {
     _bufferSize = squish::GetStorageRequirements(_width, _height, _squishFlag);
     
     // 書き出し開始
-	_io = std::make_unique<GpuVideoIO>(_dstPath.c_str(), "wb");
+	_io = std::unique_ptr<GpuVideoIO>(new GpuVideoIO(_dstPath.c_str(), "wb"));
     
     // ヘッダー情報書き出し
 #define W(v) if(_io->write(&v, sizeof(v)) != sizeof(v)) { assert(0); }
