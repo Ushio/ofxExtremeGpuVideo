@@ -15,69 +15,64 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-               BuildableName = "GpuVideoDebug.app"
-               BlueprintName = "GpuVideo"
-               ReferencedContainer = "container:GpuVideo.xcodeproj">
+               BuildableName = "converter-osx.app"
+               BlueprintName = "converter-osx"
+               ReferencedContainer = "container:converter-osx.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "GpuVideoDebug.app"
-            BlueprintName = "GpuVideo"
-            ReferencedContainer = "container:GpuVideo.xcodeproj">
+            BuildableName = "converter-osx.app"
+            BlueprintName = "converter-osx"
+            ReferencedContainer = "container:converter-osx.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "GpuVideoDebug.app"
-            BlueprintName = "GpuVideo"
-            ReferencedContainer = "container:GpuVideo.xcodeproj">
+            BuildableName = "converter-osx.app"
+            BlueprintName = "converter-osx"
+            ReferencedContainer = "container:converter-osx.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "GpuVideoDebug.app"
-            BlueprintName = "GpuVideo"
-            ReferencedContainer = "container:GpuVideo.xcodeproj">
+            BuildableName = "converter-osx.app"
+            BlueprintName = "converter-osx"
+            ReferencedContainer = "container:converter-osx.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
