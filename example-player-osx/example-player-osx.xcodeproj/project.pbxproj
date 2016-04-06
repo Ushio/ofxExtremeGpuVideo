@@ -17,6 +17,10 @@
 		8D8225A748A13519BB37C752 /* lz4frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 42772E59F29D99864BA3FDE1 /* lz4frame.c */; };
 		D92830B41CB4F3FE007D2930 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92830B11CB4F3FE007D2930 /* main.cpp */; };
 		D92830B51CB4F3FE007D2930 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D92830B21CB4F3FE007D2930 /* ofApp.cpp */; };
+		D92831111CB4F75E007D2930 /* libtbb.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D928310F1CB4F75E007D2930 /* libtbb.dylib */; };
+		D92831121CB4F75E007D2930 /* libtbbmalloc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D92831101CB4F75E007D2930 /* libtbbmalloc.dylib */; };
+		D92831131CB4F764007D2930 /* libtbb.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D928310F1CB4F75E007D2930 /* libtbb.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D92831141CB4F764007D2930 /* libtbbmalloc.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D92831101CB4F75E007D2930 /* libtbbmalloc.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		F82803B762DBA06C94D43A83 /* ofxExtremeGpuVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2ED9FB55231452BB12BE07 /* ofxExtremeGpuVideo.cpp */; };
 /* End PBXBuildFile section */
@@ -45,6 +49,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D92831131CB4F764007D2930 /* libtbb.dylib in CopyFiles */,
+				D92831141CB4F764007D2930 /* libtbbmalloc.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,8 @@
 		D92830B11CB4F3FE007D2930 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D92830B21CB4F3FE007D2930 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
 		D92830B31CB4F3FE007D2930 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
+		D928310F1CB4F75E007D2930 /* libtbb.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtbb.dylib; path = ../libs/tbb44_20150728oss/lib/libtbb.dylib; sourceTree = "<group>"; };
+		D92831101CB4F75E007D2930 /* libtbbmalloc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtbbmalloc.dylib; path = ../libs/tbb44_20150728oss/lib/libtbbmalloc.dylib; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* example-player-osxDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-player-osxDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92831111CB4F75E007D2930 /* libtbb.dylib in Frameworks */,
+				D92831121CB4F75E007D2930 /* libtbbmalloc.dylib in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +183,8 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				D928310F1CB4F75E007D2930 /* libtbb.dylib */,
+				D92831101CB4F75E007D2930 /* libtbbmalloc.dylib */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -418,12 +430,17 @@
 					"$(OF_CORE_HEADERS)",
 					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
 					../../../addons/ofxExtremeGpuVideo/src,
+					"\"$(SRCROOT)/../libs/tbb44_20150728oss/include\"",
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../libs/tbb44_20150728oss/lib/",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
 			};
@@ -446,12 +463,17 @@
 					"$(OF_CORE_HEADERS)",
 					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
 					../../../addons/ofxExtremeGpuVideo/src,
+					"\"$(SRCROOT)/../libs/tbb44_20150728oss/include\"",
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = /Applications;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../libs/tbb44_20150728oss/lib/",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
