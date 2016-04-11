@@ -34,6 +34,7 @@ public:
     void startCompression();
     
     ofxImGui _imgui;
+    bool _liteMode = false;
     uint32_t _format = 0;
     
     bool _isConverting = false;

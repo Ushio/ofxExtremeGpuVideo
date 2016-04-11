@@ -106,6 +106,8 @@ void ofApp::draw(){
     
     ImGui::Text("fps: %.2f", ofGetFrameRate());
     if(_isConverting == false) {
+        ImGui::Checkbox("Lite mode", &_liteMode);
+        
         int format = _format;
         ImGui::Combo("Format", &format, kFormatStrings, 3);
         _format = format;
@@ -184,8 +186,8 @@ void ofApp::startCompression() {
         }
     }
     
-    _squishFlag = squish::kColourIterativeClusterFit | kGpuFmts[_format];
-    // _squishFlag = squish::kColourRangeFit | squish::kColourMetricUniform | kGpuFmts[_format];
+    uint32_t flagQuality = _liteMode ? squish::kColourRangeFit | squish::kColourMetricUniform : squish::kColourIterativeClusterFit;
+    _squishFlag = flagQuality | kGpuFmts[_format];
     _bufferSize = squish::GetStorageRequirements(_width, _height, _squishFlag);
     
     // 書き出し開始
