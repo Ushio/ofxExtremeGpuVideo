@@ -66,7 +66,7 @@ void ofApp::draw(){
                 }
             });
             
-            uint32_t head = _lz4blocks.empty() ? kRawMemoryAt : (_lz4blocks[_lz4blocks.size() - 1].address + _lz4blocks[_lz4blocks.size() - 1].size);
+            uint64_t head = _lz4blocks.empty() ? kRawMemoryAt : (_lz4blocks[_lz4blocks.size() - 1].address + _lz4blocks[_lz4blocks.size() - 1].size);
             for (int i = 0; i < workCount; i++) {
                 // 住所を記録しつつ
                 Lz4Block lz4block;
@@ -84,7 +84,7 @@ void ofApp::draw(){
             _index += workCount;
         } else {
             // 最後に住所を記録
-            uint32_t size = _lz4blocks.size() * sizeof(Lz4Block);
+			uint64_t size = _lz4blocks.size() * sizeof(Lz4Block);
             if(_io->write(_lz4blocks.data(), size) != size) {
                 assert(0);
             }
@@ -151,7 +151,7 @@ void ofApp::startCompression() {
     // パス
     std::string root = r.getPath();
     
-    for(int i = 0 ; true ; ++i) {
+    for(int i = 0; true ; ++i) {
         char path[1024];
         sprintf(path, "%s/%05d.png", root.c_str(), i + 1);
         ofFile inputPath(path);
