@@ -25,6 +25,8 @@ public:
     GPU_COMPRESS getFormat() const { return _format; }
     uint32_t getFrameBytes() const { return _frameBytes; }
     
+    bool isThreadSafe() const { return true; }
+    
     void read(uint8_t *dst, int frame) const;
 private:
     uint32_t _width = 0;

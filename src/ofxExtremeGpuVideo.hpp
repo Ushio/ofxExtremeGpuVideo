@@ -12,6 +12,7 @@
 
 #include "ofMain.h"
 #include "GpuVideoTexture.hpp"
+#include "GpuVideoReader.hpp"
 
 class ofxExtremeGpuVideo {
 public:
@@ -28,7 +29,9 @@ public:
         /* all gpu texture */
         GPU_VIDEO_ON_GPU_MEMORY
     };
-    void load(const std::string &name, Mode mode, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE);
+    std::shared_ptr<IGpuVideoReader> load(const std::string &name, Mode mode, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE);
+    std::shared_ptr<IGpuVideoReader> load(std::shared_ptr<IGpuVideoReader> reader, Mode mode, GLenum interpolation = GL_LINEAR, GLenum wrap = GL_CLAMP_TO_EDGE);
+    
     bool isLoaded() const {
         return _isLoaded;
     }
@@ -91,6 +94,8 @@ public:
         _shader.end();
     }
 private:
+    void setup_shader();
+    
     bool _isLoaded = false;
     int _frameAt = 0;
     

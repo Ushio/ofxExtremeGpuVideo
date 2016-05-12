@@ -15,7 +15,7 @@
 
 #define GLSL(version, shader)  "#version " #version "\n" #shader
 
-void ofxExtremeGpuVideo::load(const std::string &name, Mode mode, GLenum interpolation, GLenum wrap) {
+void ofxExtremeGpuVideo::setup_shader() {
     if(_shader.isLoaded() == false) {
         if(ofIsGLProgrammableRenderer()) {
             std::string vs = GLSL(150,
@@ -79,6 +79,9 @@ void ofxExtremeGpuVideo::load(const std::string &name, Mode mode, GLenum interpo
         }
         _shader.linkProgram();
     }
+}
+std::shared_ptr<IGpuVideoReader> ofxExtremeGpuVideo::load(const std::string &name, Mode mode, GLenum interpolation, GLenum wrap) {
+    this->setup_shader();
     
     std::shared_ptr<IGpuVideoReader> reader;
     switch(mode) {
@@ -110,6 +113,32 @@ void ofxExtremeGpuVideo::load(const std::string &name, Mode mode, GLenum interpo
     _placeHolder.allocate(_width, _height, GL_RGB, false);
     
     _isLoaded = true;
+    return reader;
+}
+std::shared_ptr<IGpuVideoReader> ofxExtremeGpuVideo::load(std::shared_ptr<IGpuVideoReader> reader, Mode mode, GLenum interpolation, GLenum wrap) {
+    this->setup_shader();
+    
+    switch(mode) {
+        case GPU_VIDEO_STREAMING_FROM_STORAGE:
+        case GPU_VIDEO_STREAMING_FROM_CPU_MEMORY:
+        case GPU_VIDEO_STREAMING_FROM_CPU_MEMORY_DECOMPRESSED: {
+            _videoTexture = std::make_shared<GpuVideoStreamingTexture>(reader, interpolation, wrap);
+            break;
+        }
+        case GPU_VIDEO_ON_GPU_MEMORY:
+            _videoTexture = std::make_shared<GpuVideoOnGpuMemoryTexture>(reader, interpolation, wrap);
+            break;
+    }
+    
+    _width = reader->getWidth();
+    _height = reader->getHeight();
+    _frameCount = reader->getFrameCount();
+    _framePerSecond = reader->getFramePerSecond();
+    _placeHolder.allocate(_width, _height, GL_RGB, false);
+    
+    _isLoaded = true;
+    
+    return reader;
 }
 
 ofShader ofxExtremeGpuVideo::_shader;

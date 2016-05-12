@@ -24,6 +24,8 @@ public:
     virtual GPU_COMPRESS getFormat() const = 0;
     virtual uint32_t getFrameBytes() const = 0;
     
+    virtual bool isThreadSafe() const = 0;
+    
     // 読み込み
     virtual void read(uint8_t *dst, int frame) const = 0;
 };
@@ -42,6 +44,8 @@ public:
     float getFramePerSecond() const { return _framePerSecond; }
     GPU_COMPRESS getFormat() const { return _format; }
     uint32_t getFrameBytes() const { return _frameBytes; }
+    
+    bool isThreadSafe() const { return _onMemory; }
     
     // 読み込み
     void read(uint8_t *dst, int frame) const;
