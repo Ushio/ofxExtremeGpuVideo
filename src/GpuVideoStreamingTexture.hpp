@@ -17,6 +17,8 @@
 #include "GpuVideoTexture.hpp"
 #include "GpuVideoReader.hpp"
 
+#define ENABLE_DOUBLE_BUFFER 1
+
 /**
  * CPUメモリ、またはストレージからのストリーミングを行う
  */
@@ -30,10 +32,20 @@ public:
     
     void updateCPU(int frame);
     void uploadGPU();
-    GLuint getTexture() const { return _texture; }
+    GLuint getTexture() const {
+#if ENABLE_DOUBLE_BUFFER
+        return _textures[0];
+#else
+        return _texture;
+#endif
+    }
 private:
     std::shared_ptr<IGpuVideoReader> _reader;
+#if ENABLE_DOUBLE_BUFFER
+    GLuint _textures[2] = {0, 0};
+#else
     GLuint _texture = 0;
+#endif
     GLuint _glFmt = 0;
     int _curFrame = -1;
 
