@@ -21,7 +21,7 @@ void ofApp::setup() {
 		_videos[i].load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
 	}
 #else
-	_gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+	_gpuVideo.load("firework_A1_B_0513.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
 #endif
 }
 
@@ -63,6 +63,8 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(128);
+    ofDisableAlphaBlending();
+    
 #if ENABLE_BENCHMARK
 	float x = 0.0f;
 	float y = 0.0f;

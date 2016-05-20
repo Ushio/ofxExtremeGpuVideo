@@ -64,7 +64,8 @@ void GpuVideoReader::read(uint8_t *dst, int frame) const {
     assert(0 <= frame && frame < _lz4Blocks.size());
     Lz4Block lz4block = _lz4Blocks[frame];
     if(_onMemory) {
-        LZ4_decompress_safe((const char *)_memory.data() + lz4block.address, (char *)dst, static_cast<int>(lz4block.size), _frameBytes);
+        int r = LZ4_decompress_safe((const char *)_memory.data() + lz4block.address, (char *)dst, static_cast<int>(lz4block.size), _frameBytes);
+        assert(r == _frameBytes);
     } else {
 		_io->seek(lz4block.address, SEEK_SET);
         if(_io->read(_lz4Buffer.data(), lz4block.size) != lz4block.size) {

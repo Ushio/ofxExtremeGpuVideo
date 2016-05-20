@@ -39,6 +39,9 @@ public:
     uint32_t getHeight() const { return _height; }
     uint32_t getFrameCount() const { return _frameCount; }
     float getFramePerSecond() const { return _framePerSecond; }
+    void setFramePerSecond(float fps) {
+        _framePerSecond = fps;
+    }
     
     float getDuration() const {
         return _frameCount * (1.0f / _framePerSecond);
