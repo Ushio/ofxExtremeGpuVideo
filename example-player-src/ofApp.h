@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxExtremeGpuVideo.hpp"
+#include "ofxGvTexture.hpp"
 
 /* bench mark test */
 #define ENABLE_BENCHMARK 0
@@ -32,5 +33,6 @@ public:
 	std::array<ofxExtremeGpuVideo, 60> _videos;
 #else
 	ofxExtremeGpuVideo _gpuVideo;
+	ofxGvTexture _gv;
 #endif
 };

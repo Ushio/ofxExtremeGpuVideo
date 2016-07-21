@@ -22,6 +22,7 @@ void ofApp::setup() {
 	}
 #else
 	_gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+	_gv.load("footage.gv", ofxGvTexture::GPU_VIDEO_STREAMING_FROM_STORAGE);
 #endif
 }
 
@@ -57,6 +58,9 @@ void ofApp::update(){
 #else
 	_gpuVideo.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
 	_gpuVideo.update();
+
+	_gv.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
+	_gv.update();
 #endif
 }
 
@@ -82,9 +86,10 @@ void ofApp::draw(){
 		}
 	}
 #else
-	_gpuVideo.begin();
-	_gpuVideo.getPlaceHolderTexture().draw(0, 0);
-	_gpuVideo.end();
+	//_gpuVideo.begin();
+	//_gpuVideo.getPlaceHolderTexture().draw(0, 0);
+	//_gpuVideo.end();
+	_gv.getTexture().draw(0, 0);
 #endif
 
 	ofDrawBitmapString(ofToString(ofGetFrameRate()), 10, 20);

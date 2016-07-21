@@ -1,4 +1,4 @@
-//
+﻿//
 //  GpuVideo.hpp
 //  emptyExample
 //
