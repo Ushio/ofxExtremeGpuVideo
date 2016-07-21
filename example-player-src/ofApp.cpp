@@ -1,4 +1,4 @@
-#include "ofApp.h"
+﻿#include "ofApp.h"
 
 #if CPU_PARALLEL_DECODE
 #include <tbb/tbb.h>

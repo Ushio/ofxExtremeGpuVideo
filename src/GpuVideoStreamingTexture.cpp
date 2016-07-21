@@ -1,4 +1,4 @@
-//
+﻿//
 //  GpuVideoStreamingTexture.cpp
 //  emptyExample
 //

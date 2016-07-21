@@ -1,4 +1,4 @@
-//
+﻿//
 //  ofxGpuVideo.hpp
 //  emptyExample
 //

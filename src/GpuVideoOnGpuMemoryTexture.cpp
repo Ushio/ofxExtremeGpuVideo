@@ -1,4 +1,4 @@
-//
+﻿//
 //  GpuVideoOnGpuMemoryTexture.cpp
 //  emptyExample
 //

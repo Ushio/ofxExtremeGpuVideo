@@ -1,4 +1,4 @@
-//
+﻿//
 //  GpuVideoReader.hpp
 //  emptyExample
 //
