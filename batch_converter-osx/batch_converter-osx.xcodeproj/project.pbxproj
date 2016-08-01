@@ -36,8 +36,8 @@
 		D92831081CB4F57F007D2930 /* libtbbmalloc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D92831061CB4F57F007D2930 /* libtbbmalloc.dylib */; };
 		D92831091CB4F587007D2930 /* libtbb.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D92831051CB4F57F007D2930 /* libtbb.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D928310A1CB4F587007D2930 /* libtbbmalloc.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D92831061CB4F57F007D2930 /* libtbbmalloc.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D967203F1D4F3FBC0029C056 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D967203C1D4F3FBC0029C056 /* main.cpp */; };
-		D96720401D4F3FBC0029C056 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D967203D1D4F3FBC0029C056 /* ofApp.cpp */; };
+		D983AA8D1D4F6CC200AA02C7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D983AA8A1D4F6CC200AA02C7 /* main.cpp */; };
+		D983AA8E1D4F6CC200AA02C7 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D983AA8B1D4F6CC200AA02C7 /* ofApp.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		F82803B762DBA06C94D43A83 /* ofxExtremeGpuVideo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2ED9FB55231452BB12BE07 /* ofxExtremeGpuVideo.cpp */; };
 /* End PBXBuildFile section */
@@ -141,9 +141,9 @@
 		D92830F81CB4F502007D2930 /* ThemeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeTest.h; sourceTree = "<group>"; };
 		D92831051CB4F57F007D2930 /* libtbb.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtbb.dylib; path = ../libs/tbb44_20150728oss/lib/libtbb.dylib; sourceTree = "<group>"; };
 		D92831061CB4F57F007D2930 /* libtbbmalloc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtbbmalloc.dylib; path = ../libs/tbb44_20150728oss/lib/libtbbmalloc.dylib; sourceTree = "<group>"; };
-		D967203C1D4F3FBC0029C056 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		D967203D1D4F3FBC0029C056 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
-		D967203E1D4F3FBC0029C056 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		D983AA8A1D4F6CC200AA02C7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "../batch_converter-src/main.cpp"; sourceTree = "<group>"; };
+		D983AA8B1D4F6CC200AA02C7 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = "../batch_converter-src/ofApp.cpp"; sourceTree = "<group>"; };
+		D983AA8C1D4F6CC200AA02C7 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = "../batch_converter-src/ofApp.h"; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* batch_converter-debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "batch_converter-debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
@@ -320,9 +320,9 @@
 		D92830FF1CB4F538007D2930 /* batch_converter-src */ = {
 			isa = PBXGroup;
 			children = (
-				D967203C1D4F3FBC0029C056 /* main.cpp */,
-				D967203D1D4F3FBC0029C056 /* ofApp.cpp */,
-				D967203E1D4F3FBC0029C056 /* ofApp.h */,
+				D983AA8A1D4F6CC200AA02C7 /* main.cpp */,
+				D983AA8B1D4F6CC200AA02C7 /* ofApp.cpp */,
+				D983AA8C1D4F6CC200AA02C7 /* ofApp.h */,
 			);
 			name = "batch_converter-src";
 			path = "../../converter-src";
@@ -475,10 +475,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96720401D4F3FBC0029C056 /* ofApp.cpp in Sources */,
+				D983AA8E1D4F6CC200AA02C7 /* ofApp.cpp in Sources */,
 				D92830D61CB4F4E0007D2930 /* maths.cpp in Sources */,
 				07EFD2E92292EFC1444EAC1B /* GpuVideoOnGpuMemoryTexture.cpp in Sources */,
-				D967203F1D4F3FBC0029C056 /* main.cpp in Sources */,
+				D983AA8D1D4F6CC200AA02C7 /* main.cpp in Sources */,
 				D92830D81CB4F4E0007D2930 /* singlecolourfit.cpp in Sources */,
 				D92830FB1CB4F502007D2930 /* EngineGLFW.cpp in Sources */,
 				D92830EA1CB4F4F7007D2930 /* imgui_draw.cpp in Sources */,
