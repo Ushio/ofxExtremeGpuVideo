@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DB151B9E22C5ACF6DDC10CF7F6B5F117387F3E28",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DB151B9E22C5ACF6DDC10CF7F6B5F117387F3E28" : 0,
+    "BE4593B4FF87CD2A0F0C9D9C811C2983F4F2A713" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "88A53D36-7400-45DD-95DB-E9C10C26FCAF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DB151B9E22C5ACF6DDC10CF7F6B5F117387F3E28" : "ofxExtremeGpuVideo\/",
+    "BE4593B4FF87CD2A0F0C9D9C811C2983F4F2A713" : "ofxExtremeGpuVideo\/libs\/gmrtdxt\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "batch_converter-osx",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "batch_converter-osx\/batch_converter-osx.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/graphitemaster\/gmrtdxt",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BE4593B4FF87CD2A0F0C9D9C811C2983F4F2A713"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ushio\/ofxExtremeGpuVideo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DB151B9E22C5ACF6DDC10CF7F6B5F117387F3E28"
+    }
+  ]
+}

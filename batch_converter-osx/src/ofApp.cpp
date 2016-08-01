@@ -13,19 +13,10 @@
 #include <regex>
 #include <tbb/tbb.h>
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-
-//#include "stb_dxt.h"
-
 #include "squish.h"
 #include "lz4.h"
 #include "lz4frame.h"
 #include "lz4hc.h"
-
-//const char* kFormatStrings[] = {"DXT 1", "DXT 3", "DXT 5"};
-//static const int kGpuFmts[] = {squish::kDxt1, squish::kDxt3, squish::kDxt5};
-//static const int kGpuVideoFmts[] = {GPU_COMPRESS_DXT1, GPU_COMPRESS_DXT3, GPU_COMPRESS_DXT5};
 
 template <class T>
 void imgui_draw_tree_node(const char *name, bool isOpen, T f) {
@@ -44,7 +35,7 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     }
     
     // memory
-    uint32_t _format = squish::kDxt1;
+    uint32_t _format = hasAlpha ? squish::kDxt5 : squish::kDxt1;
     uint32_t _width = 0;
     uint32_t _height = 0;
     float _fps = fps;
@@ -60,17 +51,16 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     
     int width;
     int height;
-    int bpp;
-    unsigned char* pixels = stbi_load (imagePaths[0].c_str(), &width, &height, &bpp, 4);
-    stbi_image_free (pixels);
+    ofPixels img;
+    ofLoadImage(img, imagePaths[0]);
+    width = img.getWidth();
+    height = img.getHeight();
     
     _width = width;
     _height = height;
     
-    // uint32_t flagQuality = squish::kColourIterativeClusterFit;
-    uint32_t flagQuality = (squish::kColourRangeFit | squish::kColourMetricUniform);
+    uint32_t flagQuality = liteMode ? (squish::kColourRangeFit | squish::kColourMetricUniform) : squish::kColourIterativeClusterFit;
     
-    const char* kFormatStrings[] = {"DXT 1", "DXT 3", "DXT 5"};
     static const int kGpuFmts[] = {squish::kDxt1, squish::kDxt3, squish::kDxt5};
     static const int kGpuVideoFmts[] = {GPU_COMPRESS_DXT1, GPU_COMPRESS_DXT3, GPU_COMPRESS_DXT5};
     
@@ -98,17 +88,11 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
             auto compress = [imagePaths, _width, _height, _squishFlag](int index, uint8_t *dst) {
                 std::string src = imagePaths[index];
                 
-                int width;
-                int height;
-                int bpp;
-                unsigned char* pixels = stbi_load (src.c_str(), &width, &height, &bpp, STBI_rgb_alpha);
-                if(width != _width || height != _height) {
-                    abort();
-                }
+                ofPixels img;
+                ofLoadImage(img, src);
+                img.setImageType(OF_IMAGE_COLOR_ALPHA);
                 
-                squish::CompressImage(pixels, _width, _height, dst, _squishFlag);
-                
-                stbi_image_free (pixels);
+                squish::CompressImage(img.getData(), _width, _height, dst, _squishFlag);
             };
             
             const int kBatchCount = 32;
@@ -177,7 +161,10 @@ bool is_ready(std::future<R> const& f)
 }
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
+    ofSetVerticalSync(false);
+    ofSetFrameRate(30);
+    
     _imgui.setup();
     _abortTask = false;
 }
@@ -242,7 +229,7 @@ void ofApp::draw() {
                 task->run = true;
                 auto output_path = task->output_path;
                 auto image_paths = task->image_paths;
-                auto fps = 30.0f;
+                auto fps = _fps;
                 std::atomic<int> &done_frames = task->done_frames;
                 std::atomic<bool> &abortTask = _abortTask;
                 auto liteMode = _liteMode;
@@ -277,16 +264,23 @@ void ofApp::draw() {
                 ImGui::Text("[%d]: %s", i, _inputs[i].c_str());
             }
         });
-        if(ImGui::Button("Clear Input", ImVec2(200, 30))) {
-            _inputs.clear();
+        if(_inputs.empty() == false) {
+            if(ImGui::Button("Clear Input", ImVec2(200, 30))) {
+                _inputs.clear();
+            }
         }
+
         imgui_draw_tree_node("Option", true, [=]() {
             ImGui::Checkbox("Lite Mode", &_liteMode);
             ImGui::Checkbox("Has Alpha", &_hasAlpha);
+            ImGui::InputFloat("", &_fps);
+            _fps = std::max(_fps, 1.0f);
+            _fps = std::min(_fps, 3000.0f);
         });
-        
-        if(ImGui::Button("Run", ImVec2(200, 30))) {
-            this->startCompression();
+        if(_inputs.empty() == false) {
+            if(ImGui::Button("Run", ImVec2(200, 30))) {
+                this->startCompression();
+            }
         }
     } else {
         imgui_draw_tree_node("Option", true, [=]() {

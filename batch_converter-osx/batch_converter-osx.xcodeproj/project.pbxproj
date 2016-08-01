@@ -145,7 +145,7 @@
 		D967203D1D4F3FBC0029C056 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		D967203E1D4F3FBC0029C056 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* batch_converter-osxDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "batch_converter-osxDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* batch_converter-debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "batch_converter-debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
-				E4B69B5B0A3A1756003C02F2 /* batch_converter-osxDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* batch_converter-debug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -407,7 +407,7 @@
 			);
 			name = "batch_converter-osx";
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* batch_converter-osxDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* batch_converter-debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -604,7 +604,6 @@
 					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
 					../../../addons/ofxExtremeGpuVideo/src,
 					"\"$(SRCROOT)/../libs/tbb44_20150728oss/include\"",
-					"\"$(SRCROOT)/../libs/stb\"",
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -615,7 +614,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../libs/tbb44_20150728oss/lib/",
 				);
-				PRODUCT_NAME = "batch_converter-osxDebug";
+				PRODUCT_NAME = "batch_converter-debug";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -638,7 +637,6 @@
 					../../../addons/ofxExtremeGpuVideo/libs/lz4/lib,
 					../../../addons/ofxExtremeGpuVideo/src,
 					"\"$(SRCROOT)/../libs/tbb44_20150728oss/include\"",
-					"\"$(SRCROOT)/../libs/stb\"",
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -649,7 +647,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../libs/tbb44_20150728oss/lib/",
 				);
-				PRODUCT_NAME = "batch_converter-osxDebug";
+				PRODUCT_NAME = batch_converter;
 				WRAPPER_EXTENSION = app;
 				baseConfigurationReference = E4EB6923138AFD0F00A09F29;
 			};

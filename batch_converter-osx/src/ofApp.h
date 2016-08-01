@@ -41,8 +41,9 @@ public:
     
     bool _isConverting = false;
     
-    bool _liteMode = false;
+    bool _liteMode = true;
     bool _hasAlpha = false;
+    float _fps = 30.0f;
     std::vector<std::string> _inputs;
     
     // タスク
