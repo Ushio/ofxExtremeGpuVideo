@@ -35,7 +35,6 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     }
     
     // memory
-    uint32_t _format = hasAlpha ? squish::kDxt5 : squish::kDxt1;
     uint32_t _width = 0;
     uint32_t _height = 0;
     float _fps = fps;
@@ -61,10 +60,7 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     
     uint32_t flagQuality = liteMode ? (squish::kColourRangeFit | squish::kColourMetricUniform) : squish::kColourIterativeClusterFit;
     
-    static const int kGpuFmts[] = {squish::kDxt1, squish::kDxt3, squish::kDxt5};
-    static const int kGpuVideoFmts[] = {GPU_COMPRESS_DXT1, GPU_COMPRESS_DXT3, GPU_COMPRESS_DXT5};
-    
-    _squishFlag = flagQuality | kGpuFmts[_format];
+    _squishFlag = flagQuality | (hasAlpha ? squish::kDxt5 : squish::kDxt1);
     _bufferSize = squish::GetStorageRequirements(_width, _height, _squishFlag);
     
     // 書き出し開始
@@ -78,7 +74,7 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     uint32_t frameCount = (uint32_t)imagePaths.size();
     W(frameCount);
     W(_fps);
-    uint32_t videoFmt = kGpuVideoFmts[_format];
+    uint32_t videoFmt = hasAlpha ? GPU_COMPRESS_DXT5 : GPU_COMPRESS_DXT1;
     W(videoFmt);
     W(_bufferSize);
 #undef W
@@ -244,6 +240,7 @@ void ofApp::draw() {
         }
         
         if(all_done) {
+            _dones = _inputs;
             _inputs.clear();
             _tasks.clear();
             _isConverting = false;
@@ -264,6 +261,11 @@ void ofApp::draw() {
                 ImGui::Text("[%d]: %s", i, _inputs[i].c_str());
             }
         });
+        imgui_draw_tree_node("Dones", true, [=]() {
+            for(int i = 0 ; i < _dones.size() ; ++i) {
+                ImGui::Text("[%d]: %s", i, _dones[i].c_str());
+            }
+        });
         if(_inputs.empty() == false) {
             if(ImGui::Button("Clear Input", ImVec2(200, 30))) {
                 _inputs.clear();
@@ -282,6 +284,8 @@ void ofApp::draw() {
                 this->startCompression();
             }
         }
+        
+        //
     } else {
         imgui_draw_tree_node("Option", true, [=]() {
             ImGui::Text("Lite Mode: %s", _liteMode ? "YES" : "NO");

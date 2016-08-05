@@ -45,6 +45,7 @@ public:
     bool _hasAlpha = false;
     float _fps = 30.0f;
     std::vector<std::string> _inputs;
+    std::vector<std::string> _dones;
     
     // タスク
     struct ConvTask {
