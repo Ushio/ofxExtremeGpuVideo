@@ -275,7 +275,7 @@ void ofApp::draw() {
         imgui_draw_tree_node("Option", true, [=]() {
             ImGui::Checkbox("Lite Mode", &_liteMode);
             ImGui::Checkbox("Has Alpha", &_hasAlpha);
-            ImGui::InputFloat("", &_fps);
+            ImGui::InputFloat("video fps", &_fps);
             _fps = std::max(_fps, 1.0f);
             _fps = std::min(_fps, 3000.0f);
         });
