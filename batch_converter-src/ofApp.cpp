@@ -185,11 +185,15 @@ void ofApp::startCompression() {
         dir.allowExt("jpeg");
         dir.allowExt("jpg");
         dir.listDir();
-        dir.sort();
         for(int i = 0 ; i < dir.size() ; ++i) {
             std::string path = dir.getPath(i);
-            task->image_paths.push_back(path);
+			auto name = std::filesystem::path(path).filename().string();
+			if (0 < name.size() && name[0] != '.') {
+				task->image_paths.push_back(path);
+			}
         }
+		std::sort(task->image_paths.begin(), task->image_paths.end());
+
         task->output_path = input + ".gv";
         task->done_frames = 0;
         

@@ -16,8 +16,10 @@ int main( ){
     settings.height = 720;
     settings.windowMode = OF_WINDOW;
     settings.multiMonitorFullScreen = true;
-//    settings.glVersionMajor = 4;
-//    settings.glVersionMinor = 1;
+	// settings.glVersionMajor = 4;
+	// settings.glVersionMinor = 1;
+	// settings.glVersionMajor = 1;
+	// settings.glVersionMinor = 1;
     ofCreateWindow(settings);
     
     // this kicks off the running of my app
