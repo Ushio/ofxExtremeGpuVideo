@@ -184,6 +184,7 @@ void ofApp::startCompression() {
         dir.allowExt("png");
         dir.allowExt("jpeg");
         dir.allowExt("jpg");
+        dir.allowExt("tiff");
         dir.listDir();
         for(int i = 0 ; i < dir.size() ; ++i) {
             std::string path = dir.getPath(i);
