@@ -21,8 +21,8 @@ void ofApp::setup() {
 		_videos[i].load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
 	}
 #else
-	_gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
-	_gv.load("footage.gv", ofxGvTexture::GPU_VIDEO_STREAMING_FROM_STORAGE);
+	_gpuVideo.load("video.gvintermediate.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+	_gv.load("video.gvintermediate.gv", ofxGvTexture::GPU_VIDEO_STREAMING_FROM_STORAGE);
 #endif
 }
 
@@ -56,10 +56,14 @@ void ofApp::update(){
 #endif
 
 #else
-	_gpuVideo.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
+	float e = ofGetElapsedTimef();
+	
+	// _gpuVideo.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
+	_gpuVideo.setTime(fmodf(e, _gpuVideo.getDuration()));
 	_gpuVideo.update();
 
-	_gv.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
+	// _gv.setTime(_gpuVideo.getDuration() * ((float)ofGetMouseX() / ofGetWidth()));
+	_gv.setTime(fmodf(e, _gv.getDuration()));
 	_gv.update();
 #endif
 }

@@ -27,6 +27,9 @@ GpuVideoStreamingTexture::GpuVideoStreamingTexture(std::shared_ptr<IGpuVideoRead
             case GPU_COMPRESS_DXT5:
                 _glFmt = GL_COMPRESSED_RGBA_S3TC_DXT5_EXT;
                 break;
+			case GPU_COMPRESS_BC7:
+				_glFmt = GL_COMPRESSED_RGBA_BPTC_UNORM_ARB;
+				break;
         }
         glCompressedTexImage2D(GL_TEXTURE_2D, 0, _glFmt, _reader->getWidth(), _reader->getHeight(), 0, _reader->getFrameBytes(), nullptr);
         glBindTexture(GL_TEXTURE_2D, 0);

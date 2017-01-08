@@ -22,7 +22,8 @@
 enum GPU_COMPRESS : uint32_t {
     GPU_COMPRESS_DXT1 = 1,
     GPU_COMPRESS_DXT3 = 3,
-    GPU_COMPRESS_DXT5 = 5,
+	GPU_COMPRESS_DXT5 = 5,
+	GPU_COMPRESS_BC7 = 7
 };
 
 static const uint32_t kRawMemoryAt = 24;
