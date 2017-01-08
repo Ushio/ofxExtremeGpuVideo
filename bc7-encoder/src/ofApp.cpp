@@ -1,4 +1,4 @@
-#include "ofApp.h"
+ï»¿#include "ofApp.h"
 
 #include <locale> 
 #include <codecvt>
@@ -41,16 +41,16 @@ public:
 		D3D_FEATURE_LEVEL selected;
 
 		hr = D3D11CreateDevice(
-			nullptr,                  // g—p‚·‚éƒAƒ_ƒvƒ^[‚ğİ’èBNULL‚Ìê‡‚ÍƒfƒtƒHƒ‹ƒg‚ÌƒAƒ_ƒvƒ^[B
-			D3D_DRIVER_TYPE_HARDWARE,    // D3D_DRIVER_TYPE‚Ì‚¢‚¸‚ê‚©Bƒhƒ‰ƒCƒo[‚Ìí—ŞBpAdapter‚ª NULL ˆÈŠO‚Ìê‡‚ÍAD3D_DRIVER_TYPE_UNKNOWN‚ğw’è‚·‚éB
-			NULL,                       // ƒ\ƒtƒgƒEƒFƒAƒ‰ƒXƒ^ƒ‰ƒCƒU‚ğÀ‘•‚·‚éDLL‚Ö‚Ìƒnƒ“ƒhƒ‹BD3D_DRIVER_TYPE ‚ğ D3D_DRIVER_TYPE_SOFTWARE ‚Éİ’è‚µ‚Ä‚¢‚éê‡‚Í NULL ‚É‚Å‚«‚È‚¢B
-			createDeviceFlag,           // D3D11_CREATE_DEVICE_FLAG‚Ì‘g‚İ‡‚í‚¹BƒfƒoƒCƒX‚ğì¬‚Ég—p‚³‚ê‚éƒpƒ‰ƒ[ƒ^B
-			FeatureLevel.data(),               // D3D_FEATURE_LEVEL‚Ìƒ|ƒCƒ“ƒ^
-			FeatureLevel.size(),                 // D3D_FEATURE_LEVEL”z—ñ‚Ì—v‘f”
-			D3D11_SDK_VERSION,          // DirectX SDK‚Ìƒo[ƒWƒ‡ƒ“B‚±‚Ì’l‚ÍŒÅ’èB
-			&d3d11device,               // ‰Šú‰»‚³‚ê‚½ƒfƒoƒCƒX
-			&selected,              // Ì—p‚³‚ê‚½ƒtƒB[ƒ`ƒƒ[ƒŒƒxƒ‹
-			&d3d11deviceContext         // ‰Šú‰»‚³‚ê‚½ƒfƒoƒCƒXƒRƒ“ƒeƒLƒXƒg
+			nullptr,                  // ä½¿ç”¨ã™ã‚‹ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã‚’è¨­å®šã€‚NULLã®å ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã€‚
+			D3D_DRIVER_TYPE_HARDWARE,    // D3D_DRIVER_TYPEã®ã„ãšã‚Œã‹ã€‚ãƒ‰ãƒ©ã‚¤ãƒãƒ¼ã®ç¨®é¡ã€‚pAdapterãŒ NULL ä»¥å¤–ã®å ´åˆã¯ã€D3D_DRIVER_TYPE_UNKNOWNã‚’æŒ‡å®šã™ã‚‹ã€‚
+			NULL,                       // ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ãƒ©ã‚¹ã‚¿ãƒ©ã‚¤ã‚¶ã‚’å®Ÿè£…ã™ã‚‹DLLã¸ã®ãƒãƒ³ãƒ‰ãƒ«ã€‚D3D_DRIVER_TYPE ã‚’ D3D_DRIVER_TYPE_SOFTWARE ã«è¨­å®šã—ã¦ã„ã‚‹å ´åˆã¯ NULL ã«ã§ããªã„ã€‚
+			createDeviceFlag,           // D3D11_CREATE_DEVICE_FLAGã®çµ„ã¿åˆã‚ã›ã€‚ãƒ‡ãƒã‚¤ã‚¹ã‚’ä½œæˆæ™‚ã«ä½¿ç”¨ã•ã‚Œã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚
+			FeatureLevel.data(),               // D3D_FEATURE_LEVELã®ãƒã‚¤ãƒ³ã‚¿
+			FeatureLevel.size(),                 // D3D_FEATURE_LEVELé…åˆ—ã®è¦ç´ æ•°
+			D3D11_SDK_VERSION,          // DirectX SDKã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€‚ã“ã®å€¤ã¯å›ºå®šã€‚
+			&d3d11device,               // åˆæœŸåŒ–ã•ã‚ŒãŸãƒ‡ãƒã‚¤ã‚¹
+			&selected,              // æ¡ç”¨ã•ã‚ŒãŸãƒ•ã‚£ãƒ¼ãƒãƒ£ãƒ¼ãƒ¬ãƒ™ãƒ«
+			&d3d11deviceContext         // åˆæœŸåŒ–ã•ã‚ŒãŸãƒ‡ãƒã‚¤ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 		);
 		if (FAILED(hr)) {
 			printf("failed to initialize dx11");
@@ -110,10 +110,10 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 	int blocksize = 16;
 	_bufferSize = blockcount * blocksize;
 
-	// ‘‚«o‚µŠJn
+	// æ›¸ãå‡ºã—é–‹å§‹
 	_io = std::unique_ptr<GpuVideoIO>(new GpuVideoIO(output_path.c_str(), "wb"));
 
-	// ƒwƒbƒ_[î•ñ‘‚«o‚µ
+	// ãƒ˜ãƒƒãƒ€ãƒ¼æƒ…å ±æ›¸ãå‡ºã—
 #define W(v) if(_io->write(&v, sizeof(v)) != sizeof(v)) { assert(0); }
 	W(_width);
 	W(_height);
@@ -158,16 +158,16 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 		}
 		int compressed = LZ4_compress_HC((char *)cImage.GetPixels(),
 						(char *)_lz4CompressBuffer.data(),
-						_bufferSize, compressBound, 16);
+						_bufferSize, compressBound, LZ4HC_CLEVEL_MAX);
 
-		// ZŠ‚ğ‹L˜^‚µ‚Â‚Â
+		// ä½æ‰€ã‚’è¨˜éŒ²ã—ã¤ã¤
 		uint64_t head = _lz4blocks.empty() ? kRawMemoryAt : (_lz4blocks[_lz4blocks.size() - 1].address + _lz4blocks[_lz4blocks.size() - 1].size);
 		Lz4Block lz4block;
 		lz4block.address = head;
 		lz4block.size = compressed;
 		_lz4blocks.push_back(lz4block);
 
-		// ‘‚«‚İ
+		// æ›¸ãè¾¼ã¿
 		if (_io->write(_lz4CompressBuffer.data(), compressed) != compressed) {
 			assert(0);
 		}
@@ -177,13 +177,13 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 		yield();
 	}
 
-	// ÅŒã‚ÉZŠ‚ğ‹L˜^
+	// æœ€å¾Œã«ä½æ‰€ã‚’è¨˜éŒ²
 	uint64_t size = _lz4blocks.size() * sizeof(Lz4Block);
 	if (_io->write(_lz4blocks.data(), size) != size) {
 		abort();
 	}
 
-	// ƒtƒ@ƒCƒ‹‚ğƒNƒ[ƒY
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¯ãƒ­ãƒ¼ã‚º
 	_io.reset();
 	
 	//for (;;) {
@@ -220,14 +220,14 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 
 	//		uint64_t head = _lz4blocks.empty() ? kRawMemoryAt : (_lz4blocks[_lz4blocks.size() - 1].address + _lz4blocks[_lz4blocks.size() - 1].size);
 	//		for (int i = 0; i < workCount; i++) {
-	//			// ZŠ‚ğ‹L˜^‚µ‚Â‚Â
+	//			// ä½æ‰€ã‚’è¨˜éŒ²ã—ã¤ã¤
 	//			Lz4Block lz4block;
 	//			lz4block.address = head;
 	//			lz4block.size = lz4sizes[i];
 	//			head += lz4block.size;
 	//			_lz4blocks.push_back(lz4block);
 
-	//			// ‘‚«‚İ
+	//			// æ›¸ãè¾¼ã¿
 	//			if (_io->write(_lz4CompressBuffer.data() + i * compressBound, lz4sizes[i]) != lz4sizes[i]) {
 	//				assert(0);
 	//			}
@@ -235,7 +235,7 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 
 	//		_index += workCount;
 
-	//		// ‹­§—£’E
+	//		// å¼·åˆ¶é›¢è„±
 	//		if (interrupt) {
 	//			_io.reset();
 	//			::remove(output_path.c_str());
@@ -243,16 +243,16 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 	//		}
 	//	}
 	//	else {
-	//		// ÅŒã‚ÉZŠ‚ğ‹L˜^
+	//		// æœ€å¾Œã«ä½æ‰€ã‚’è¨˜éŒ²
 	//		uint64_t size = _lz4blocks.size() * sizeof(Lz4Block);
 	//		if (_io->write(_lz4blocks.data(), size) != size) {
 	//			assert(0);
 	//		}
 
-	//		// ƒtƒ@ƒCƒ‹‚ğƒNƒ[ƒY
+	//		// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¯ãƒ­ãƒ¼ã‚º
 	//		_io.reset();
 
-	//		// I—¹
+	//		// çµ‚äº†
 	//		break;
 	//	}
 	//}

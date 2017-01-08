@@ -1,4 +1,4 @@
-#pragma once
+Ôªø#pragma once
 
 #include "ofMain.h"
 
@@ -44,7 +44,7 @@ public:
 	std::vector<std::string> _inputs;
 	std::vector<std::string> _dones;
 
-	// É^ÉXÉN
+	// „Çø„Çπ„ÇØ
 	struct ConvTask {
 		bool run = false;
 		bool done = false;
