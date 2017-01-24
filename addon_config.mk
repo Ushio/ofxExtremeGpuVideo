@@ -64,6 +64,9 @@ common:
 	# a specific platform
 	ADDON_SOURCES_EXCLUDE += libs/lz4/examples/%
 	ADDON_SOURCES_EXCLUDE += libs/lz4/programs/%
+	ADDON_SOURCES_EXCLUDE += libs/lz4/tests%
+	ADDON_SOURCES_EXCLUDE += libs/lz4/contrib%
+	ADDON_SOURCES_EXCLUDE += libs/ofxCoroutine%
 	ADDON_SOURCES_EXCLUDE += libs/ofxImGui/%
 	ADDON_SOURCES_EXCLUDE += libs/squish-1.11/%
 	ADDON_SOURCES_EXCLUDE += libs/squish-1.11_lib/%
@@ -78,8 +81,11 @@ common:
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/contrib%
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/examples%
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/programs%
+	ADDON_INCLUDES_EXCLUDE += libs/lz4/contrib%
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/versionsTest%
 	ADDON_INCLUDES_EXCLUDE += libs/lz4/visual%
+	ADDON_INCLUDES_EXCLUDE += libs/ofxCoroutine%
+	ADDON_INCLUDES_EXCLUDE += libs/ofxImGui%
 	ADDON_INCLUDES_EXCLUDE += libs/ofxImGui%
 	ADDON_INCLUDES_EXCLUDE += libs/squish-1.11%
 	ADDON_INCLUDES_EXCLUDE += libs/squish-1.11_lib%
