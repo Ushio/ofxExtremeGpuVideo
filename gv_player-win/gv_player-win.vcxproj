@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>gv_player-win</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\doc;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll\example;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\tests;..\..\..\addons\ofxExtremeGpuVideo\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\libs\imgui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\doc;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll\example;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\tests;..\..\..\addons\ofxExtremeGpuVideo\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\libs\imgui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\doc;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll\example;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\tests;..\..\..\addons\ofxExtremeGpuVideo\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\libs\imgui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\doc;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\dll\example;..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\tests;..\..\..\addons\ofxExtremeGpuVideo\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\src;..\..\..\addons\ofxExtremeGpuVideo\libs\ofxImGui\libs\imgui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui.cpp" />
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui_draw.cpp" />
+    <ClCompile Include="..\libs\ofxImGui\src\BaseEngine.cpp" />
+    <ClCompile Include="..\libs\ofxImGui\src\BaseTheme.cpp" />
+    <ClCompile Include="..\libs\ofxImGui\src\EngineGLFW.cpp" />
+    <ClCompile Include="..\libs\ofxImGui\src\ofxImGui.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoOnGpuMemoryTexture.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoReader.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoReaderDecompressed.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoStreamingTexture.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\src\ofxExtremeGpuVideo.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4.c" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4frame.c" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4hc.c" />
+    <ClCompile Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\xxhash.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\imgui.h" />
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\imgui_internal.h" />
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_rect_pack.h" />
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_textedit.h" />
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_truetype.h" />
+    <ClInclude Include="..\libs\ofxImGui\src\BaseEngine.h" />
+    <ClInclude Include="..\libs\ofxImGui\src\BaseTheme.h" />
+    <ClInclude Include="..\libs\ofxImGui\src\EngineGLFW.h" />
+    <ClInclude Include="..\libs\ofxImGui\src\imconfig.h" />
+    <ClInclude Include="..\libs\ofxImGui\src\ofxImGui.h" />
+    <ClInclude Include="..\libs\ofxImGui\src\ThemeTest.h" />
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideo.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoIO.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoOnGpuMemoryTexture.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoReader.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoReaderDecompressed.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoStreamingTexture.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\GpuVideoTexture.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\ofxExtremeGpuVideo.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\src\ofxGvTexture.hpp" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4.h" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4frame.h" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4frame_static.h" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4hc.h" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\lz4opt.h" />
+    <ClInclude Include="..\..\..\addons\ofxExtremeGpuVideo\libs\lz4\lib\xxhash.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\libs\ofxImGui\libs\imgui\src\README.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="icon.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

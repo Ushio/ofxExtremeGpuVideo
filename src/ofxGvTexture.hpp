@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include "ofMain.h"
 #include "GpuVideoTexture.hpp"
 #include "GpuVideoReader.hpp"
 #include "GpuVideoReaderDecompressed.hpp"
@@ -135,6 +136,10 @@ public:
 	float getDuration() const {
 		return _frameCount * (1.0f / _framePerSecond);
 	}
+	uint32_t getWidth() const { return _width; }
+	uint32_t getHeight() const { return _height; }
+	uint32_t getFrameCount() const { return _frameCount; }
+	float getFramePerSecond() const { return _framePerSecond; }
 
 	void setTime(float atTime) {
 		float framef = atTime * _framePerSecond;
@@ -145,7 +150,9 @@ public:
 		frameAt = std::min(frameAt, (int)_frameCount - 1);
 		_frameAt = frameAt;
 	}
-
+	int getFrameAt() const {
+		return _frameAt;
+	}
 	ofTexture &getTexture() {
 		return _texture;
 	}

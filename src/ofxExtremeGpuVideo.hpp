@@ -53,7 +53,9 @@ public:
         frameAt = std::min(frameAt, (int)_frameCount - 1);
         _frameAt = frameAt;
     }
-    
+	int getFrameAt() const {
+		return _frameAt;
+	}
     // update (simple use)
     void update() {
         if(_isLoaded == false) {
