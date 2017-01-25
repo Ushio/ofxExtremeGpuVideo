@@ -38,7 +38,7 @@ void ofApp::update() {
 		
 		if (_play)
 		{
-			_elapsed += deltaT;
+			_elapsed += deltaT * _timescale;
 		}
 
 		if (_loop) {
@@ -78,7 +78,7 @@ void ofApp::draw(){
 		_imgui.begin();
 		ImGui::PushStyleColor(ImGuiCol_WindowBg, ofVec4f(0.0f, 0.2f, 0.2f, 1.0f));
 		ImGui::SetNextWindowPos(ofVec2f(10, 30), ImGuiSetCond_Once);
-		ImGui::SetNextWindowSize(ofVec2f(500, 400), ImGuiSetCond_Once);
+		ImGui::SetNextWindowSize(ofVec2f(500, 600), ImGuiSetCond_Once);
 
 		ImGui::Begin("Config Panel");
 		ImGui::Text("Key bindings");
@@ -105,6 +105,19 @@ void ofApp::draw(){
 			imgui_draw_tree_node("playing", true, [=]() {
 				ImGui::Checkbox("play", &_play);
 				ImGui::Checkbox("loop", &_loop);
+
+				imgui_draw_tree_node("speed", false, [=]() {
+					ImGui::SliderFloat("timescale", &_timescale, 0.0f, 5.0f);
+					if (ImGui::Button("x 1")) {
+						_timescale = 1.0f;
+					}
+					if (ImGui::Button("x 0.5")) {
+						_timescale = 0.5f;
+					}
+					if (ImGui::Button("x 2")) {
+						_timescale = 2.0f;
+					}
+				});
 
 				float at = _elapsed;
 				if (ImGui::SliderFloat("time at", &at, 0.0f, _video.getDuration())) {

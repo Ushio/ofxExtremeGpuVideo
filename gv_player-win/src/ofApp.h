@@ -42,5 +42,7 @@ public:
 	bool _play = false;
 	bool _loop = true;
 
+	float _timescale = 1.0f;
+
 	int _drawMode = DrawMode_Fit;
 };
