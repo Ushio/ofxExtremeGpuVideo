@@ -81,6 +81,13 @@ void ofApp::draw(){
 		ImGui::SetNextWindowSize(ofVec2f(500, 400), ImGuiSetCond_Once);
 
 		ImGui::Begin("Config Panel");
+		ImGui::Text("Key bindings");
+		ImGui::Text("f    : toggle fullscreen");
+		ImGui::Text("h    : hide panel");
+		ImGui::Text("space: play pause");
+		ImGui::Text("right: next frame");
+		ImGui::Text("left : prev frame");
+		ImGui::Separator();
 		ImGui::Text("fps: %.2f", ofGetFrameRate());
 
 		if (_video.isLoaded()) {
@@ -156,6 +163,26 @@ void ofApp::keyPressed(int key){
 		ofToggleFullscreen();
 	}
 	
+	if (_video.isLoaded()) {
+		int frameAt = _video.getFrameAt();
+
+		if (key == OF_KEY_RIGHT) {
+			frameAt++;
+			if (frameAt < _video.getFrameCount()) {
+				double step = 1.0 / _video.getFramePerSecond();
+				_elapsed = step * 0.5 + step * frameAt;
+				_play = false;
+			}
+		}
+		if (key == OF_KEY_LEFT) {
+			frameAt--;
+			if (0 <= frameAt) {
+				double step = 1.0 / _video.getFramePerSecond();
+				_elapsed = step * 0.5 + step * frameAt;
+				_play = false;
+			}
+		}
+	}
 }
 
 //--------------------------------------------------------------
