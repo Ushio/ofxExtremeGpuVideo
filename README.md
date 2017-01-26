@@ -17,7 +17,7 @@ $ ruby download_resource.rb
 ## How to encode
 Required ffmpeg.<br>
 Please install ffmpeg by brew(osx) or chocolatey(windows).<br>
-<br>
+or png tiff sequence directly. <br>
 
 ### 1. create \*.gvintermediate from any video file
 
@@ -54,3 +54,6 @@ $ ruby video_to_gvintermediate.rb footage.mov
 eof - (frame count) * 16: [(uint64_t, uint64_t)..<frame count] (address, size) of lz4, address is zero based from file head
 
 ```
+
+nvtt encoder supported
+https://developer.nvidia.com/gameworksdownload#?dn=gpu-accelerated-texture-tools-2-08
