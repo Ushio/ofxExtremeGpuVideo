@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\BaseEngine.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\BaseTheme.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\EngineGLFW.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\EngineOpenGLES.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\src\ofxImGui.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui_demo.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\ofxImGui\libs\imgui\src\imgui_draw.cpp">
+      <Filter>addons\ofxImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoOnGpuMemoryTexture.cpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoReader.cpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoReaderDecompressed.cpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GpuVideoStreamingTexture.cpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ofxExtremeGpuVideo.cpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\lz4frame.c">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\lz4hc.c">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\xxhash.c">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\lz4\lib\lz4.c">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{fb0c13d1-68b6-4007-bd17-93752f8711dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxImGui">
+      <UniqueIdentifier>{1320fadf-d038-4b0c-ab11-4ddcd41455a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxExtremeGpuVideo">
+      <UniqueIdentifier>{6f0741ca-bbff-4cfc-bc96-01b32f5f7d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxExtremeGpuVideo\lz4">
+      <UniqueIdentifier>{4a362495-daa5-462e-8735-08487033f8b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\BaseEngine.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\BaseTheme.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\EngineGLFW.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\EngineOpenGLES.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\imconfig.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\ofxImGui.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\src\ThemeTest.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\imgui.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\imgui_internal.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_rect_pack.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_textedit.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\ofxImGui\libs\imgui\src\stb_truetype.h">
+      <Filter>addons\ofxImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideo.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoIO.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoOnGpuMemoryTexture.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoReader.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoReaderDecompressed.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoStreamingTexture.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GpuVideoTexture.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxExtremeGpuVideo.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofxGvTexture.hpp">
+      <Filter>addons\ofxExtremeGpuVideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4.h">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4frame.h">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4frame_static.h">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\lz4hc.h">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\lz4\lib\xxhash.h">
+      <Filter>addons\ofxExtremeGpuVideo\lz4</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>

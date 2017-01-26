@@ -105,8 +105,7 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
                     compress(_index + i, _gpuCompressBuffer.data() + i * _bufferSize);
                     lz4sizes[i] = LZ4_compress_HC((char *)_gpuCompressBuffer.data() + i * _bufferSize,
                                                   (char *)_lz4CompressBuffer.data() + i * compressBound,
-                                                  _bufferSize, compressBound, LZ4HC_CLEVEL_MAX);
-                    
+                                                  _bufferSize, compressBound, LZ4HC_CLEVEL_DEFAULT);
                     done_frames++;
                 }
             });
