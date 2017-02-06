@@ -129,7 +129,8 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 
 			ErrorHandler errorHandler;
 
-			static thread_local std::vector<uint8_t> dxtBuffer(_bufferSize);
+			static thread_local std::vector<uint8_t> dxtBuffer;
+			dxtBuffer.resize(_bufferSize);
 			Writer writer(dxtBuffer.data());
 
 			outputOptions.setOutputHandler(&writer);
@@ -137,7 +138,8 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 
 			bool s = compressor.process(inputOptions, compOptions, outputOptions);
 
-			static thread_local std::vector<uint8_t> lz4CompressBuffer(compressBound);
+			static thread_local std::vector<uint8_t> lz4CompressBuffer;
+			lz4CompressBuffer.resize(compressBound);
 			int compressed = LZ4_compress_HC((char *)dxtBuffer.data(),
 				(char *)lz4CompressBuffer.data(),
 				_bufferSize, compressBound, LZ4HC_CLEVEL_DEFAULT);
