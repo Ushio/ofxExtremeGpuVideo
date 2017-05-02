@@ -57,3 +57,7 @@ eof - (frame count) * 16: [(uint64_t, uint64_t)..<frame count] (address, size) o
 
 nvtt encoder supported
 https://developer.nvidia.com/gameworksdownload#?dn=gpu-accelerated-texture-tools-2-08
+
+
+Prebuild Binary Converter
+https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.0.0
