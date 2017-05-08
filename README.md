@@ -5,7 +5,7 @@
 - Frame data is compressed DXT1, DXT3, DXT5 format
 - Storage format is compressed by lz4
 
-## setup
+## setup for example (optional)
 
 ```
 
@@ -15,11 +15,13 @@ $ ruby download_resource.rb
 ```
 
 ## How to encode
-Required ffmpeg.<br>
-Please install ffmpeg by brew(osx) or chocolatey(windows).<br>
-or png tiff sequence directly. <br>
+We have to convert from image sequence to format(\*.gv).
 
-### 1. create \*.gvintermediate from any video file
+If you don't have image sequence, you can encode to image sequence by ffmpeg.
+Please install ffmpeg by brew(osx) or chocolatey(windows).
+or png tiff sequence directly by like after effects or nearly tools.
+
+### 1 (optional). create \*.gvintermediate(image seq) from any video file
 
 ```
 
@@ -28,17 +30,34 @@ $ ruby video_to_gvintermediate.rb footage.mov
 
 ```
 
-### 2. open openframeworks project file
-- converter-osx/converter-osx.xcodeproj  (osx)
-- converter-win/ofxExtremeGpuVideo_win.sln (windows)
+### 2. Launch App Prebuild Binary Converter
+ https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.0.0
 
-### 3. select format dxt1, dxt3, dxt5
-- unity is not supported dxt3 yet.
+for win: nvtt_bach_converter_win
+for mac: batch_converter_mac
 
-### 4. click compress, and select \*.gvintermediate directory
-- please wait
+but we recommend windows. nvtt encoder is fast, high quality.
+mac converter is slow ("no lite mode" quality is maybe nearly nvtt)
 
-### 5. done
+for mac, has "lite mode" option is fast mode.(because encode is very slow)
+
+### 3. select Alpha Mode
+
+### 4. Drag and drop image sequence folder.
+imageseq/image000.tiff
+imageseq/image001.tiff
+imageseq/image002.tiff
+
+please drag and drop imageseq folder to window.
+
+and Press "Run" button.
+
+### Wait
+have a break
+
+### How to Play
+Plase check example-player-win or example-player-osx
+** Player algorithm is exactly same win, mac. **
 
 ## binary file format (gv)
 
