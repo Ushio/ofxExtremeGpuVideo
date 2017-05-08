@@ -59,6 +59,8 @@ have a break
 Plase check example-player-win or example-player-osx
 ** Player algorithm is exactly same win, mac. **
 
+ofxGvTexture is Newer, and simple.
+
 ## binary file format (gv)
 
 ```
