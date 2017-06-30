@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class GpuVideoPlayer : MonoBehaviour {
     public string PathForStreamingAssets = "";
     public Renderer RendererCompornent;
@@ -44,3 +48,50 @@ public class GpuVideoPlayer : MonoBehaviour {
 		_video = null;
 	}
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(GpuVideoPlayer))]
+public class GpuVideoPlayerEditor : Editor
+{
+    float _position = 0.0f;
+    GpuVideo _video;
+
+
+    void OnEnable()
+    {
+    }
+    void OnDisable()
+    {
+        if(_video != null)
+        {
+            _video.Dispose();
+            _video = null;
+        }
+    }
+
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        try
+        {
+            GpuVideoPlayer myScript = (GpuVideoPlayer)target;
+
+            if (_video == null || _video.PathForStreamingAssets != myScript.PathForStreamingAssets)
+            {
+                if(_video != null)
+                {
+                    _video.Dispose();
+                }
+                _video = new GpuVideo(myScript.PathForStreamingAssets);
+            }
+
+            _video.setTime(_video.Duration * _position);
+            GUILayout.Label(_video.Texture, GUILayout.Width(300), GUILayout.Height(200));
+            _position = GUILayout.HorizontalSlider(_position, 0.0f, 1.0f);
+        } catch (System.Exception ) {
+            // :(
+        }
+    }
+}
+#endif

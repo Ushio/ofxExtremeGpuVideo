@@ -15,6 +15,7 @@ public class GpuVideo : System.IDisposable {
 		Dxt5 = 5
 	};
 
+    private string _pathForStreamingAssets;
 	private FileStream _filestream;
 	private int _width;
 	private int _height;
@@ -37,7 +38,8 @@ public class GpuVideo : System.IDisposable {
 	private int _frameAt = -1;
 
 	public GpuVideo(string pathForStreamingAssets) {
-		_filestream = File.OpenRead (Application.streamingAssetsPath + "/" + pathForStreamingAssets);
+        _pathForStreamingAssets = pathForStreamingAssets;
+        _filestream = File.OpenRead (Application.streamingAssetsPath + "/" + pathForStreamingAssets);
 		{
 			var reader = new BinaryReader (_filestream);
 			_width = (int)reader.ReadUInt32 ();
@@ -61,7 +63,7 @@ public class GpuVideo : System.IDisposable {
 				block.size = reader.ReadUInt64 ();
 				_lz4Blocks.Add (block);
 
-				Debug.Log (string.Format ("block {0}, {0}", block.address, block.size));
+				// Debug.Log (string.Format ("block {0}, {0}", block.address, block.size));
 
 				maxSize = maxSize < block.size ? block.size : maxSize;
 			}
@@ -89,8 +91,15 @@ public class GpuVideo : System.IDisposable {
 		this.setFrame (0);
 	}
 
+    public string PathForStreamingAssets
+    {
+        get
+        {
+            return _pathForStreamingAssets;
+        }
+    }
 
-	public int Width { get { return _width; } }
+    public int Width { get { return _width; } }
 	public int Height { get { return _height; } }
 	public int FrameCount { get { return _frameCount; } }
 	public float FramePerSecond { get { return _framePerSecond; } }
