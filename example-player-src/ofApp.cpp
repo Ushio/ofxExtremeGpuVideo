@@ -19,11 +19,11 @@ void ofApp::setup() {
 	ofSetVerticalSync(true);
 #if ENABLE_BENCHMARK
 	for (int i = 0; i < _videos.size(); ++i) {
-		_videos[i].load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+		_videos[i].load("../../../resources/Atoms-8579.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
 	}
 #else
-	_gpuVideo.load("footage.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
-	_gv.load("footage.gv", ofxGvTexture::GPU_VIDEO_STREAMING_FROM_STORAGE);
+	_gpuVideo.load("../../../resources/Atoms-8579.gv", ofxExtremeGpuVideo::GPU_VIDEO_STREAMING_FROM_STORAGE);
+	_gv.load("../../../resources/Atoms-8579.gv", ofxGvTexture::GPU_VIDEO_STREAMING_FROM_STORAGE);
 #endif
 }
 

@@ -1,7 +1,7 @@
 require "open-uri"
 require 'fileutils'
 
-url = "http://ushiobucket1.s3.amazonaws.com/GpuVideo/footage.gv"
+url = "http://ushiobucket1.s3.amazonaws.com/GpuVideo/Atoms-8579.gv"
 filename = File.basename(url)
 
 open(filename, 'wb') do |file|
@@ -10,8 +10,6 @@ open(filename, 'wb') do |file|
     end
 end
 
-FileUtils.copy(filename, "./../converter-osx/bin/data/", {:verbose => true})
-FileUtils.copy(filename, "./../converter-win/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../example-player-osx/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../example-player-win/bin/data/", {:verbose => true})
 FileUtils.copy(filename, "./../Unity/Example/Assets/StreamingAssets", {:verbose => true})
