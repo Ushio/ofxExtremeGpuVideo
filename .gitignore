@@ -1,7 +1,6 @@
 # video
 *.gv
 
-
 # =============== #
 # osx             #
 # =============== #
@@ -60,7 +59,6 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
 
 # ============ #
 # OS generated #
