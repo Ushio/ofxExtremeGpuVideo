@@ -82,3 +82,6 @@ https://developer.nvidia.com/gameworksdownload#?dn=gpu-accelerated-texture-tools
 
 Prebuild Binary Converter
 https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.0.0
+
+Unity Package
+https://github.com/Ushio/ofxExtremeGpuVideo/raw/master/Unity/gpuvideo.unitypackage
