@@ -31,9 +31,9 @@ inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 	const uint8_t *src = pixels.getData();
 
 	struct coord {
-		coord(int x, int y) :dx(x), dy(y) {
+		coord(int x, int y):dx(x), dy(y) {
 		}
-		int dx; int dy;
+		int dx; int dy; 
 	};
 
 	std::vector<std::vector<coord>> samplecoords;
@@ -67,9 +67,9 @@ inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 
 	for (int y = 0; y < h; ++y) {
 		for (int x = 0; x < w; ++x) {
-			int index = (h * y + x) * 4;
+			int index = (w * y + x) * 4;
+			memcpy(dst + index, src + index, 4);
 
-			// alpha == 0 ? 
 			if (src[index + 3] != 0) {
 				memcpy(dst + index, src + index, 4);
 				continue;

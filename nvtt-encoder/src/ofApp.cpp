@@ -6,6 +6,7 @@
 #include "lz4frame.h"
 #include "lz4hc.h"
 
+
 inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 	if (pixels.getImageType() != OF_IMAGE_COLOR_ALPHA) {
 		return pixels;
@@ -54,9 +55,9 @@ inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 
 	for (int y = 0; y < h; ++y) {
 		for (int x = 0; x < w; ++x) {
-			int index = (h * y + x) * 4;
+			int index = (w * y + x) * 4;
+			memcpy(dst + index, src + index, 4);
 
-			// alpha == 0 ? 
 			if (src[index + 3] != 0) {
 				memcpy(dst + index, src + index, 4);
 				continue;
