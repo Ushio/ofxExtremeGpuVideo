@@ -53,7 +53,8 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	ofClear(0);
+	static bool isWhite = false;
+	ofClear(isWhite ? 255 : 0);
 
 	if (_video.isLoaded()) {
 		_video.setTime(_elapsed);
@@ -89,6 +90,8 @@ void ofApp::draw(){
 		ImGui::Text("left : prev frame");
 		ImGui::Separator();
 		ImGui::Text("fps: %.2f", ofGetFrameRate());
+
+		ImGui::Checkbox("background white", &isWhite);
 
 		if (_video.isLoaded()) {
 			imgui_draw_tree_node("video info", true, [=]() {

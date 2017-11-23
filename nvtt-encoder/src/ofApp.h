@@ -44,6 +44,7 @@ public:
 	bool _isConverting = false;
 
 	bool _hasAlpha = false;
+	bool _estimateAlphaZeroColor = false;
 	float _fps = 30.0f;
 	std::vector<std::string> _inputs;
 	std::vector<std::string> _dones;

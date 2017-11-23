@@ -18,6 +18,102 @@
 #include "lz4frame.h"
 #include "lz4hc.h"
 
+
+inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
+	if (pixels.getImageType() != OF_IMAGE_COLOR_ALPHA) {
+		return pixels;
+	}
+	int w = pixels.getWidth();
+	int h = pixels.getHeight();
+	ofPixels dstPixels;
+	dstPixels.allocate(w, h, OF_IMAGE_COLOR_ALPHA);
+	uint8_t *dst = dstPixels.getData();
+	const uint8_t *src = pixels.getData();
+
+	struct coord {
+		coord(int x, int y) :dx(x), dy(y) {
+		}
+		int dx; int dy;
+	};
+
+	std::vector<std::vector<coord>> samplecoords;
+
+	for (int i = 0; i < 3; ++i) {
+		int dx = 1;
+		int dy = 0;
+
+		int x = -1 * (1 + i);
+		int y = -1 * (1 + i);
+
+		std::vector<coord> cs;
+
+		for (int k = 0; k < 4; ++k) {
+			int nstep = 3 + 2 * i - 1;
+			for (int j = 0; j < nstep; ++j) {
+				cs.emplace_back(x, y);
+
+				x += dx;
+				y += dy;
+			}
+
+			int new_dx = -dy;
+			int new_dy = dx;
+			dx = new_dx;
+			dy = new_dy;
+		}
+
+		samplecoords.push_back(cs);
+	}
+
+	for (int y = 0; y < h; ++y) {
+		for (int x = 0; x < w; ++x) {
+			int index = (h * y + x) * 4;
+
+			// alpha == 0 ? 
+			if (src[index + 3] != 0) {
+				memcpy(dst + index, src + index, 4);
+				continue;
+			}
+
+			float rgb[3] = { 0.0f , 0.0f , 0.0f };
+			int count = 0;
+
+			for (int j = 0; j < samplecoords.size(); ++j) {
+				for (auto c : samplecoords[j]) {
+					int sx = x + c.dx;
+					int sy = y + c.dy;
+					if (sx < 0 || w <= sx) { continue; }
+					if (sy < 0 || h <= sy) { continue; }
+
+					int index_sample = (h * sy + sx) * 4;
+					if (src[index_sample + 3] == 0) {
+						continue;
+					}
+					for (int i = 0; i < 3; ++i) {
+						rgb[i] += src[index_sample + i];
+					}
+					count++;
+				}
+
+				if (count != 0) {
+					for (int i = 0; i < 3; ++i) {
+						int comp = round(rgb[i] / count);
+						comp = std::min(comp, 255);
+						dst[index + i] = (uint8_t)comp;
+					}
+					dst[index + 3] = 0;
+					break;
+				}
+			}
+
+			if (count == 0) {
+				memcpy(dst + index, src + index, 4);
+			}
+		}
+	}
+	return dstPixels;
+}
+
 template <class T>
 void imgui_draw_tree_node(const char *name, bool isOpen, T f) {
     if(isOpen) {
@@ -29,7 +125,7 @@ void imgui_draw_tree_node(const char *name, bool isOpen, T f) {
     }
 }
 
-inline void images_to_gv(std::string output_path, std::vector<std::string> imagePaths, float fps, std::atomic<int> &done_frames, std::atomic<bool> &interrupt, bool liteMode, bool hasAlpha) {
+inline void images_to_gv(std::string output_path, std::vector<std::string> imagePaths, float fps, std::atomic<int> &done_frames, std::atomic<bool> &interrupt, bool liteMode, bool hasAlpha, bool isEstimateAlphaZeroColor) {
     if(imagePaths.empty()) {
         return;
     }
@@ -52,6 +148,7 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     int height;
     ofPixels img;
     ofLoadImage(img, imagePaths[0]);
+
     width = img.getWidth();
     height = img.getHeight();
     
@@ -81,12 +178,16 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
     
     for(;;) {
         if(_index < imagePaths.size()) {
-            auto compress = [imagePaths, _width, _height, _squishFlag](int index, uint8_t *dst) {
+            auto compress = [imagePaths, _width, _height, _squishFlag, isEstimateAlphaZeroColor](int index, uint8_t *dst) {
                 std::string src = imagePaths[index];
                 
                 ofPixels img;
                 ofLoadImage(img, src);
                 img.setImageType(OF_IMAGE_COLOR_ALPHA);
+
+				if (isEstimateAlphaZeroColor) {
+					img = estimateAlphaZeroColor(img);
+				}
                 
                 squish::CompressImage(img.getData(), _width, _height, dst, _squishFlag);
             };
@@ -235,8 +336,9 @@ void ofApp::draw() {
                 std::atomic<bool> &abortTask = _abortTask;
                 auto liteMode = _liteMode;
                 auto hasAlpha = _hasAlpha;
-                task->work = std::async([output_path, image_paths, fps, &done_frames, &abortTask, liteMode, hasAlpha](){
-                    images_to_gv(output_path, image_paths, fps, done_frames, abortTask, liteMode, hasAlpha);
+				auto isEstimate = _isEstimateAlphaZeroColor;
+                task->work = std::async([output_path, image_paths, fps, &done_frames, &abortTask, liteMode, hasAlpha, isEstimate](){
+                    images_to_gv(output_path, image_paths, fps, done_frames, abortTask, liteMode, hasAlpha, isEstimate);
                     return 0;
                 });
                 all_done = false;
@@ -283,6 +385,7 @@ void ofApp::draw() {
             ImGui::InputFloat("video fps", &_fps);
             _fps = std::max(_fps, 1.0f);
             _fps = std::min(_fps, 3000.0f);
+			ImGui::Checkbox("estimate alpha zero color", &_isEstimateAlphaZeroColor);
         });
         if(_inputs.empty() == false) {
             if(ImGui::Button("Run", ImVec2(200, 30))) {

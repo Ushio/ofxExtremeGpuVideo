@@ -6,6 +6,101 @@
 #include "lz4frame.h"
 #include "lz4hc.h"
 
+inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
+	if (pixels.getImageType() != OF_IMAGE_COLOR_ALPHA) {
+		return pixels;
+	}
+	int w = pixels.getWidth();
+	int h = pixels.getHeight();
+	ofPixels dstPixels;
+	dstPixels.allocate(w, h, OF_IMAGE_COLOR_ALPHA);
+	uint8_t *dst = dstPixels.getData();
+	const uint8_t *src = pixels.getData();
+
+	struct coord {
+		coord(int x, int y) :dx(x), dy(y) {
+		}
+		int dx; int dy;
+	};
+
+	std::vector<std::vector<coord>> samplecoords;
+
+	for (int i = 0; i < 3; ++i) {
+		int dx = 1;
+		int dy = 0;
+
+		int x = -1 * (1 + i);
+		int y = -1 * (1 + i);
+
+		std::vector<coord> cs;
+
+		for (int k = 0; k < 4; ++k) {
+			int nstep = 3 + 2 * i - 1;
+			for (int j = 0; j < nstep; ++j) {
+				cs.emplace_back(x, y);
+
+				x += dx;
+				y += dy;
+			}
+
+			int new_dx = -dy;
+			int new_dy = dx;
+			dx = new_dx;
+			dy = new_dy;
+		}
+
+		samplecoords.push_back(cs);
+	}
+
+	for (int y = 0; y < h; ++y) {
+		for (int x = 0; x < w; ++x) {
+			int index = (h * y + x) * 4;
+
+			// alpha == 0 ? 
+			if (src[index + 3] != 0) {
+				memcpy(dst + index, src + index, 4);
+				continue;
+			}
+
+			float rgb[3] = { 0.0f , 0.0f , 0.0f };
+			int count = 0;
+
+			for (int j = 0; j < samplecoords.size(); ++j) {
+				for (auto c : samplecoords[j]) {
+					int sx = x + c.dx;
+					int sy = y + c.dy;
+					if (sx < 0 || w <= sx) { continue; }
+					if (sy < 0 || h <= sy) { continue; }
+
+					int index_sample = (h * sy + sx) * 4;
+					if (src[index_sample + 3] == 0) {
+						continue;
+					}
+					for (int i = 0; i < 3; ++i) {
+						rgb[i] += src[index_sample + i];
+					}
+					count++;
+				}
+
+				if (count != 0) {
+					for (int i = 0; i < 3; ++i) {
+						int comp = round(rgb[i] / count);
+						comp = std::min(comp, 255);
+						dst[index + i] = (uint8_t)comp;
+					}
+					dst[index + 3] = 0;
+					break;
+				}
+			}
+
+			if (count == 0) {
+				memcpy(dst + index, src + index, 4);
+			}
+		}
+	}
+	return dstPixels;
+}
+
 template <class T>
 void imgui_draw_tree_node(const char *name, bool isOpen, T f) {
 	if (isOpen) {
@@ -16,7 +111,7 @@ void imgui_draw_tree_node(const char *name, bool isOpen, T f) {
 		ImGui::TreePop();
 	}
 }
-inline void images_to_gv(std::string output_path, std::vector<std::string> imagePaths, float fps, int *done_frames, bool hasAlpha, nvtt::Compressor &compressor, ofxCoroutine::Yield &yield) {
+inline void images_to_gv(std::string output_path, std::vector<std::string> imagePaths, float fps, int *done_frames, bool hasAlpha, bool isEstimateAlphaZeroColor, nvtt::Compressor &compressor, ofxCoroutine::Yield &yield) {
 	if (imagePaths.empty()) {
 		return;
 	}
@@ -123,6 +218,11 @@ inline void images_to_gv(std::string output_path, std::vector<std::string> image
 			static thread_local ofPixels inputImage;
 			ofLoadImage(inputImage, imagePaths[j]);
 			inputImage.setImageType(OF_IMAGE_COLOR_ALPHA);
+
+			if (isEstimateAlphaZeroColor) {
+				inputImage = estimateAlphaZeroColor(inputImage);
+			}
+
 			inputImage.swapRgb();
 
 			inputOptions.setMipmapData(inputImage.getPixels(), inputImage.getWidth(), inputImage.getHeight());
@@ -234,7 +334,7 @@ void ofApp::startCompression() {
 
 		for (int i = 0; i < _tasks.size(); ++i) {
 			auto task = _tasks[i];
-			images_to_gv(task->output_path, task->image_paths, _fps, &task->done_frames, _hasAlpha, _compressor, yield);
+			images_to_gv(task->output_path, task->image_paths, _fps, &task->done_frames, _hasAlpha, _estimateAlphaZeroColor, _compressor, yield);
 		}
 
 		_dones = _inputs;
@@ -276,6 +376,7 @@ void ofApp::draw(){
 			ImGui::InputFloat("video fps", &_fps);
 			_fps = std::max(_fps, 1.0f);
 			_fps = std::min(_fps, 3000.0f);
+			ImGui::Checkbox("estimate alpha zero color", &_estimateAlphaZeroColor);
 		});
 		if (_inputs.empty() == false) {
 			if (ImGui::Button("Run", ImVec2(200, 30))) {

@@ -318,3 +318,25 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+
+FreeImage.dll
+Zlib.dll
+assimp.dll
+fmodex.dll
+fmodex64.dll
+fmodexL.dll
+fmodexL64.dll
+freetype.dll
+glut32.dll
+libeay32.dll
+ssleay32.dll
+
+tbb.dll
+tbb_debug.dll
+tbb_preview.dll
+tbb_preview_debug.dll
+tbbmalloc.dll
+tbbmalloc_debug.dll
+tbbmalloc_proxy.dll
+tbbmalloc_proxy_debug.dll
