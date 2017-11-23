@@ -81,7 +81,16 @@ https://developer.nvidia.com/gameworksdownload#?dn=gpu-accelerated-texture-tools
 
 
 Prebuild Binary Converter
+Latest 1.1.0
+https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.0
+
+1.0.0
 https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.0.0
 
 Unity Package
 https://github.com/Ushio/ofxExtremeGpuVideo/raw/master/Unity/gpuvideo.unitypackage
+
+
+## estimate alpha zero color
+
+![demo](estimate.png)
