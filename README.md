@@ -31,7 +31,7 @@ $ ruby video_to_gvintermediate.rb footage.mov
 ```
 
 ### 2. Launch App Prebuild Binary Converter
- https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.0
+https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.1
 
 for win: nvtt_bach_converter_win
 for mac: batch_converter_mac
@@ -81,8 +81,8 @@ https://developer.nvidia.com/gameworksdownload#?dn=gpu-accelerated-texture-tools
 
 
 ## Prebuild Binary Converter
-Latest 1.1.0<br>
-https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.0
+Latest 1.1.1<br>
+https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.1
 
 1.0.0<br>
 https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.0.0
