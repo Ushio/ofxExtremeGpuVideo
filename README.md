@@ -31,13 +31,13 @@ $ ruby video_to_gvintermediate.rb footage.mov
 ```
 
 ### 2. Launch App Prebuild Binary Converter
-https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.1
+https://github.com/Ushio/ofxExtremeGpuVideo/releases/tag/1.1.2
 
 for win: nvtt_bach_converter_win
 for mac: batch_converter_mac
 
 but we recommend windows. nvtt encoder is fast, high quality.
-mac converter is slow ("no lite mode" quality is maybe nearly nvtt)
+mac converter is little bit slow ("no lite mode" quality is maybe nearly nvtt)
 
 for mac, has "lite mode" option is fast mode.(because encode is very slow)
 
