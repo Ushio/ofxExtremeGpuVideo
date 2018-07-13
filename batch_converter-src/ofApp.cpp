@@ -18,7 +18,6 @@
 #include "lz4frame.h"
 #include "lz4hc.h"
 
-
 inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 	if (pixels.getImageType() != OF_IMAGE_COLOR_ALPHA) {
 		return pixels;
@@ -31,9 +30,9 @@ inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 	const uint8_t *src = pixels.getData();
 
 	struct coord {
-		coord(int x, int y):dx(x), dy(y) {
+		coord(int x, int y) :dx(x), dy(y) {
 		}
-		int dx; int dy; 
+		int dx; int dy;
 	};
 
 	std::vector<std::vector<coord>> samplecoords;
@@ -85,7 +84,7 @@ inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 					if (sx < 0 || w <= sx) { continue; }
 					if (sy < 0 || h <= sy) { continue; }
 
-					int index_sample = (h * sy + sx) * 4;
+					int index_sample = (w * sy + sx) * 4;
 					if (src[index_sample + 3] == 0) {
 						continue;
 					}

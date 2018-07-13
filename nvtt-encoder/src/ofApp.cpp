@@ -73,7 +73,7 @@ inline ofPixels estimateAlphaZeroColor(const ofPixels &pixels) {
 					if (sx < 0 || w <= sx) { continue; }
 					if (sy < 0 || h <= sy) { continue; }
 
-					int index_sample = (h * sy + sx) * 4;
+					int index_sample = (w * sy + sx) * 4;
 					if (src[index_sample + 3] == 0) {
 						continue;
 					}

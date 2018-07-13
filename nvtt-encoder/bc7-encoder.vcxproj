@@ -178,6 +178,10 @@
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent />
+    <PreBuildEvent>
+      <Command>robocopy "C:\Program Files\NVIDIA Corporation\NVIDIA Texture Tools 2\bin" $(TargetDir) cudart64_30_14.dll
+robocopy "C:\Program Files\NVIDIA Corporation\NVIDIA Texture Tools 2\bin" $(TargetDir) nvtt.dll </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\libs\lz4\lib\lz4.c" />
