@@ -48,7 +48,7 @@ imageseq/image000.tiff
 imageseq/image001.tiff
 imageseq/image002.tiff
 
-please drag and drop imageseq folder to window.
+please drag and drop imageseq **folder** to window.
 
 and Press "Run" button.
 
