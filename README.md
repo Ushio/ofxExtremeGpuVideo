@@ -49,7 +49,7 @@ imageseq/image001.tiff
 imageseq/image002.tiff
 
 please drag and drop imageseq **folder** to window.
-## **NOT IMAGE FILES**
+**NOT IMAGE FILES**
 
 and Press "Run" button.
 
