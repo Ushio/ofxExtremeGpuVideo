@@ -94,3 +94,20 @@ https://github.com/Ushio/ofxExtremeGpuVideo/raw/master/Unity/gpuvideo.unitypacka
 ## estimate alpha zero color
 
 ![demo](estimate.png)
+
+## Directory information
+
+|  Directory  |  Description  |
+| ---- | ---- |
+|  batch_converter-osx  |  Recommended Encoder on macOS  |
+|  batch_converter-win  |  Deprecated  |
+|  bc7-encoder  |  Highly Experimental, Not Recommended |
+|  converter-osx  |  Deprecated |
+|  converter-win  |  Deprecated |
+|  example-player-osx  |  Recommended Example on macOS |
+|  example-player-win  |  Recommended Example on windows  |
+|  gv_player-mac  |  Recommended Player on macOS |
+|  gv_player-win  |  Recommended Player on windows  |
+|  nvtt-encoder  |  Recommended Encoder on windows  |
+|  Unity |  Recommended Player on unity  |
+
