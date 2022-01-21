@@ -1,15 +1,14 @@
 # GpuVideo_UE4
 
 Developed with Unreal Engine 4
+- Based on https://github.com/Ushio/ofxExtremeGpuVideo.
+- Blueprint implementation of GpuVideoPlayer and its Utility.
 
 ## Demo
 
 Please see `Content/Main.umap` or `Content/BP_GpuVideoPlayer.uasset`.
 
 ## About GpuVideo
-- Based on https://github.com/Ushio/ofxExtremeGpuVideo.
-- Blueprint implementation of GpuVideoPlayer and its Utility.
-
 - A file format optimized for random access at any frame.
 - Frame data is compressed DX1T, DXT3, DXT5 format.
 - Storage format is compressed by lz4.
