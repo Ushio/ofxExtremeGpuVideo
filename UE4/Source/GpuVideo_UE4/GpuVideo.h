@@ -10,10 +10,23 @@
 #include "Compression/lz4.h"
 #include "GpuVideo.generated.h"
 
+USTRUCT()
+struct FLz4Block {
+	GENERATED_BODY()
+
+public:
+	uint64_t address;
+	uint64_t size;
+};
+
+/**
+ *
+ */
  // GpuVideoのデータ
 UCLASS(Blueprintable, BlueprintType)
 class GPUVIDEO_UE4_API UGpuVideo : public UObject
 {
+
 	GENERATED_BODY()
 
 public:
@@ -21,13 +34,11 @@ public:
 	}
 
 	~UGpuVideo() {
+		this->buffer.Empty();
+		this->blocks.Empty();
+		delete this->lz4Buffer;
+		delete this->textureBuffer;
 	}
-
-	struct Lz4Block {
-	public:
-		uint64_t address;
-		uint64_t size;
-	};
 
 	// 動画の総フレーム数
 	int frameCount;
@@ -36,13 +47,17 @@ public:
 	int format;
 
 	// 動画を表示するテクスチャ
-	UTexture2D* texture;
+	UPROPERTY()
+		UTexture2D* texture;
+
 	FTexture2DMipMap* mipmap;
 	FUpdateTextureRegion2D* region;
 
 	// 動画のデータ
-	TArray<uint8> buffer;
-	TArray<Lz4Block> blocks;
+	UPROPERTY()
+		TArray<uint8> buffer;
+	UPROPERTY()
+		TArray<FLz4Block> blocks;
 	uint8* lz4Buffer;
 	uint8* textureBuffer;
 
@@ -106,13 +121,13 @@ public:
 		Seek(&video->buffer, head, video->frameBytes);
 
 		// フレームのデータを読み出す
-		head = video->buffer.Num() - video->frameCount * sizeof(UGpuVideo::Lz4Block);
+		head = video->buffer.Num() - video->frameCount * sizeof(FLz4Block);
 
 		uint64_t maxSize = 0;
 
 		video->blocks.Empty();
 		for (int i = 0; i < video->frameCount; i++) {
-			UGpuVideo::Lz4Block block;
+			FLz4Block block;
 
 			Seek(&video->buffer, head, block.address);
 			head += sizeof(block.address);
@@ -149,7 +164,7 @@ public:
 	}
 
 	UFUNCTION(BlueprintCallable, Category = "GpuVideo")
-	static UTexture2D* RenderGpuVideoToTexture(float time, UGpuVideo* video) {
+		static UTexture2D* RenderGpuVideoToTexture(float time, UGpuVideo* video) {
 		int frame = video->framePerSeconds * time;
 		frame = FMath::Clamp(frame, 0, video->frameCount - 1);
 
@@ -175,7 +190,13 @@ public:
 	}
 
 	UFUNCTION(BlueprintCallable, Category = "GpuVideo")
-	static float GetGpuVideoLength(UGpuVideo* video) {
+		static float GetGpuVideoLength(UGpuVideo* video) {
 		return video->frameCount / video->framePerSeconds;
+	}
+
+	UFUNCTION(BlueprintCallable, Category = "GpuVideo")
+		static void RemoveFromRootGpuVideo(UGpuVideo* video) {
+		video->texture->RemoveFromRoot();
+		video->RemoveFromRoot();
 	}
 };
