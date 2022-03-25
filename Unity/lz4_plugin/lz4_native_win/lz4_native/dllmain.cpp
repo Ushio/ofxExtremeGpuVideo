@@ -27,8 +27,8 @@ DLLAPI int lz4_decompress_safe_native(const char* source, char* dest, int compre
 	return LZ4_decompress_safe(source, dest, compressedSize, maxDecompressedSize);
 }
 
-DLLAPI int lz4_compress_default_native(const char* source, char* dest, int srcSize, int dstCapacity) {
-	return LZ4_compress_default(source, dest, srcSize, dstCapacity);
+DLLAPI int lz4_compress_default_native(const char* source, char* dest, int srcSize, int maxDestSize) {
+	return LZ4_compress_default(source, dest, srcSize, maxDestSize);
 }
 
 DLLAPI int lz4_compressBound_native(int inputSize) {

@@ -13,17 +13,17 @@
 #include "lz4hc.h"
 
 int lz4_decompress_safe_native(const char* source, char* dest, int compressedSize, int maxDecompressedSize) {
-    return LZ4_decompress_safe(source, dest, compressedSize, maxDecompressedSize);
+	return LZ4_decompress_safe(source, dest, compressedSize, maxDecompressedSize);
 }
 
-int lz4_compress_default_native(const char* source, char* dest, int srcSize, int dstCapacity) {
-    return LZ4_compress_default(source, dest, srcSize, dstCapacity);
+int lz4_compress_default_native(const char* source, char* dest, int srcSize, int maxDestSize) {
+	return LZ4_compress_default(source, dest, srcSize, maxDestSize);
 }
 
 int lz4_compressBound_native(int inputSize) {
-    return LZ4_compressBound(inputSize);
+	return LZ4_compressBound(inputSize);
 }
 
 int lz4_compress_HC_native(const char* source, char* dest, int srcSize, int maxDstSize, int compressionLevel) {
-    return LZ4_compress_HC(source, dest, srcSize, maxDstSize, compressionLevel);
+	return LZ4_compress_HC(source, dest, srcSize, maxDstSize, compressionLevel);
 }
