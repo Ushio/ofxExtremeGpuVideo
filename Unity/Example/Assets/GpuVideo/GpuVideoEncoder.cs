@@ -85,6 +85,7 @@ namespace ExtremeGpuVideo.Encoder
             if (encorder != null)
             {
                 Debug.Log("[GpuVideoEncorder] Already opened.");
+                encorder.Show();
                 return;
             }
 
