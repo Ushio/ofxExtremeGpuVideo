@@ -1,5 +1,4 @@
-﻿#define GPUVIDEO_SUPPORT_TIMELINE
-using UnityEngine;
+﻿using UnityEngine;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -105,7 +104,7 @@ namespace ExtremeGpuVideo
                 case RenderTarget.MainTexture:
                     if (rendererComponent != null && Application.isPlaying)
                     {
-                        rendererComponent.material.mainTexture = video.Texture;
+                        rendererComponent.sharedMaterial.mainTexture = video.Texture;
                     }
                     break;
                 case RenderTarget.RenderTexture:
@@ -134,7 +133,7 @@ namespace ExtremeGpuVideo
         {
             if (rendererComponent != null)
             {
-                rendererComponent.material.mainTexture = null;
+                rendererComponent.sharedMaterial.mainTexture = null;
             }
             
             if(flipyMaterial != null)
