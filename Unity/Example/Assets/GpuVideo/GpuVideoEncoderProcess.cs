@@ -13,7 +13,7 @@ namespace ExtremeGpuVideo.Encoder
     {
         public static readonly string[] SuppertFileExts = new[]
         {
-            ".png", ".jpg", ".jpeg"
+            ".png", ".jpg", ".jpeg", ".astc"
         };
 
         private bool ValidateFiles(string comparisonFile, IEnumerable<string> files)
@@ -30,21 +30,50 @@ namespace ExtremeGpuVideo.Encoder
 
         private Texture2D CreateFirstTexture(string path)
         {
-            bool hasAlpha = path.ToLower().Contains("png");
+            var extension = Path.GetExtension(path).ToLower();
 
-            var firstTexture = CreateTempTexture(path, hasAlpha ? TextureFormat.DXT5 : TextureFormat.DXT1);
+            switch (extension)
+            {
+                case ".png":
+                    return CreateTempTexture(path, TextureFormat.DXT5);
+                case ".jpg":
+                case ".jpeg":
+                    return CreateTempTexture(path, TextureFormat.DXT1);
+                case ".astc":
+                    var astcBytes = File.ReadAllBytes(path);
+                    var astcFormat = ASTCFormat.Read(astcBytes);
+                    return CreateTempTexture(path, astcFormat.GetTextureFormat());
+            }
 
-            return firstTexture;
+            throw new NotSupportedException($"[GpuVideoEncoder] File extension '{extension}' is not supported.");
         }
 
         private Texture2D CreateTempTexture(string path, TextureFormat textureFormat)
         {
-            var texture = new Texture2D(8, 8, textureFormat, false);
-            texture.LoadImage(File.ReadAllBytes(path));
-            texture.Apply();
-            texture.Compress(true);
-
-            return texture;
+            switch(textureFormat)
+            {
+                case TextureFormat.DXT1:
+                case TextureFormat.DXT5:
+                    var texture = new Texture2D(8, 8, textureFormat, false);
+                    texture.LoadImage(File.ReadAllBytes(path));
+                    texture.Apply();
+                    texture.Compress(true);
+                    return texture;
+                case TextureFormat.ASTC_4x4:
+                case TextureFormat.ASTC_5x5:
+                case TextureFormat.ASTC_6x6:
+                case TextureFormat.ASTC_8x8:
+                case TextureFormat.ASTC_10x10:
+                case TextureFormat.ASTC_12x12:
+                    var astcBytes = File.ReadAllBytes(path);
+                    var astcFormat = ASTCFormat.Read(astcBytes);
+                    var astcTexture = new Texture2D(astcFormat.Width, astcFormat.Height, astcFormat.GetTextureFormat(), false);
+                    astcTexture.LoadRawTextureData(astcBytes);
+                    astcTexture.Apply(updateMipmaps: false, makeNoLongerReadable: true);
+                    return astcTexture;
+                default:
+                    throw new NotSupportedException($"[GpuVideoEncoder] Texture format '{textureFormat}' is not supported.");
+            }
         }
 
         public void StartEncode()

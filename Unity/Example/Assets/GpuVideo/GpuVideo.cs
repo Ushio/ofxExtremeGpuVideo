@@ -13,8 +13,14 @@ namespace ExtremeGpuVideo
 		{
 			Dxt1 = 1,
 			Dxt3 = 3,
-			Dxt5 = 5
-		};
+			Dxt5 = 5,
+            Astc4x4 = 10,
+            Astc5x5 = 11,
+            Astc6x6 = 12,
+            Astc8x8 = 13,
+            Astc10x10 = 14,
+            Astc12x12 = 15,
+        };
 
 		private string _pathForStreamingAssets;
 		private FileStream _filestream;
@@ -157,7 +163,19 @@ namespace ExtremeGpuVideo
 					return TextureFormat.DXT1;
 				case 5:
 					return TextureFormat.DXT5;
-				default:
+				case 10:
+                    return TextureFormat.ASTC_4x4;
+                case 11:
+                    return TextureFormat.ASTC_5x5;
+                case 12:
+                    return TextureFormat.ASTC_6x6;
+                case 13:
+                    return TextureFormat.ASTC_8x8;
+                case 14:
+                    return TextureFormat.ASTC_10x10;
+                case 15:
+                    return TextureFormat.ASTC_12x12;
+                default:
 					throw new Exception("[GpuVideo] Unknown format.");
             }
         }
@@ -175,7 +193,19 @@ namespace ExtremeGpuVideo
 					return 1;
 				case TextureFormat.DXT5:
 					return 5;
-				default:
+				case TextureFormat.ASTC_4x4:
+					return 10;
+				case TextureFormat.ASTC_5x5:
+                    return 11;
+                case TextureFormat.ASTC_6x6:
+                    return 12;
+                case TextureFormat.ASTC_8x8:
+                    return 13;
+                case TextureFormat.ASTC_10x10:
+                    return 14;
+                case TextureFormat.ASTC_12x12:
+                    return 15;
+                default:
 					throw new Exception($"[GpuVideo] {format.ToString()} is not supported.");
             }
         }

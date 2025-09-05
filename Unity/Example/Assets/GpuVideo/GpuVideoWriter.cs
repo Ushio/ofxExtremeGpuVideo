@@ -17,7 +17,13 @@ namespace ExtremeGpuVideo.Encoder
         public static readonly TextureFormat[] SupportTextureFormats = new[]
         {
             TextureFormat.DXT1,
-            TextureFormat.DXT5
+            TextureFormat.DXT5,
+            TextureFormat.ASTC_4x4,
+            TextureFormat.ASTC_5x5,
+            TextureFormat.ASTC_6x6,
+            TextureFormat.ASTC_8x8,
+            TextureFormat.ASTC_10x10,
+            TextureFormat.ASTC_12x12,
         };
 
         private static readonly int headMemoryAt =

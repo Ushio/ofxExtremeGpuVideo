@@ -93,9 +93,9 @@ namespace ExtremeGpuVideo
                     _video = new GpuVideo(myScript.PathForStreamingAssets);
                 }
 
+                _position = GUILayout.HorizontalSlider(_position, 0.0f, 1.0f);
                 _video.setTime(_video.Duration * _position);
                 GUILayout.Label(_video.Texture, GUILayout.Width(300), GUILayout.Height(200));
-                _position = GUILayout.HorizontalSlider(_position, 0.0f, 1.0f);
             }
             catch (System.Exception)
             {
