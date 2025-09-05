@@ -22,7 +22,9 @@ namespace ExtremeGpuVideo
             Astc12x12 = 15,
         };
 
-		private string _pathForStreamingAssets;
+		public bool FlipY { private set; get; } = false;
+
+        private string _pathForStreamingAssets;
 		private FileStream _filestream;
 		private int _width;
 		private int _height;
@@ -83,7 +85,19 @@ namespace ExtremeGpuVideo
 			_textureBufferNative = Marshal.AllocHGlobal(_frameBytes);
 
 			this.setFrame(0);
-		}
+
+            switch (Format)
+            {
+                case GpuTextureFormat.Astc4x4:
+                case GpuTextureFormat.Astc5x5:
+                case GpuTextureFormat.Astc6x6:
+                case GpuTextureFormat.Astc8x8:
+                case GpuTextureFormat.Astc10x10:
+                case GpuTextureFormat.Astc12x12:
+                    FlipY = true;
+                    break;
+            }
+        }
 
 		public string PathForStreamingAssets
 		{
