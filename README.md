@@ -77,6 +77,19 @@ eof - (frame count) * 16: [(uint64_t, uint64_t)..<frame count] (address, size) o
 
 ```
 
+| Texture Format | Number (uint32_t) |
+| --- | --- |
+| DXT1 | 1 |
+| DXT3 | 3 |
+| DXT5 | 5 |
+| BC7 | 7 |
+| ASTC 4x4 | 10 |
+| ASTC 5x5 | 11 |
+| ASTC 6x6 | 12 |
+| ASTC 8x8 | 13 |
+| ASTC 10x10 | 14 |
+| ASTC 12x12 | 15 |
+
 nvtt encoder supported
 https://developer.nvidia.com/gameworksdownload#?dn=gpu-accelerated-texture-tools-2-08
 
@@ -109,5 +122,5 @@ https://github.com/Ushio/ofxExtremeGpuVideo/raw/master/Unity/gpuvideo.unitypacka
 |  gv_player-mac  |  Recommended Player on macOS |
 |  gv_player-win  |  Recommended Player on windows  |
 |  nvtt-encoder  |  Recommended Encoder on windows  |
-|  Unity |  Recommended Player on unity  |
-
+|  Unity |  Recommended Player and Encoder on unity  |
+| UE4 | Recommended Player on Unreal Engine 4 |
